@@ -55,6 +55,7 @@ var app = new Framework7({
 		},
 	  }
     },
+    //LINKS POR PAGINA
     {
       path: '/link3/',
       url: 'link3.html',
@@ -74,6 +75,7 @@ var app = new Framework7({
 		},
 	  }
     },
+    //LINKS POR PAGINA
   ],
   // ... other parameters
 });

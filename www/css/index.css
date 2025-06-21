@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+
+    --branco: #fff;
+    --gelo: #f1f1f1;
+    --azul: #ffc800;
+    --preto: #000000;
+}
+
+body{
+    font-family: Poppins;
+}
+
+.toolbar{
+    height: 80px;
+    
+    
+}
+
+.tab-link{
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    
+}
+
+.toolbar-inner .link{   
+    color: var(--azul); 
+    flex:1;
+    height: 80px;  
+    line-height: 25px; 
+	font-weight:bold;   
+    background-color: var(--branco); 
+    border-top: 1px solid var(--gelo);
+}
+
+.toolbar-inner .link:not(.active){
+    color: var(--preto);
+	font-weight:normal;
+}
+
+.toolbar-inner > .link i{
+    font-size: 28px;
+}
+
+
+.top-nav{
+    width: 100%;
+    background-color: #ffc800;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tittle-logo{
+    font-weight: 600;
+    margin-left: 5%;
+
+}
+
+.tittle-logo span{
+    color: var(--azul);
+}
+
+.btn-cart{
+    background-color: var(--branco);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5%;
+    border-radius: 50%;
+    border: 1px solid var(--gelo);
+    font-size: 24px;
+    color:var(--preto) ;
+}
+
