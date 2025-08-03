@@ -1,3 +1,5 @@
+
+
 //INICIALIZAÇÃO DO F7 QUANDO DISPOSITIVO ESTÁ PRONTO
 document.addEventListener('deviceready', onDeviceReady, false);
 var app = new Framework7({

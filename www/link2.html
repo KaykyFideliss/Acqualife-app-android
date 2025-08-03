@@ -10,13 +10,15 @@
     <!-- Color theme for statusbar (Android only) -->
     <meta name="theme-color" content="#2196f3">
     <!-- Your app title -->
-    <title>My App</title>
+    <title>Acqualife</title>
     <!-- Path to Framework7 Library Bundle CSS -->
     <link rel="stylesheet" href="lib/framework7-bundle.min.css">
     <!-- CSS PERSONALIZADO PARA MENU-->
     <link rel="stylesheet" href="css/index.css">
     <!--Ícones Material Design-->
     <link rel="stylesheet" href="css/materialdesignicons.min.css">
+   <!--fontawsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
 </head>
@@ -24,25 +26,64 @@
 <body>
     <!-- App root element -->
     <div id="app">
-
+        <!--TOGGLE BAR -->
         <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Initial Page, "data-name" contains page name -->
-            <div data-name="link2" class="page">
+        <div class="view view-main ">
 
-                <!-- Top Navbar -->
-                <div class="navbar">
-                    <div class="navbar-bg"></div>
-                    <div class="navbar-inner justify-content-center">
-                        <div class="title ">Link 2</div>
-                    </div>
+            <!-- TAB BAR-->
+            <!--<div class="toolbar toolbar-bottom">
+                <div class="toolbar-inner display-flex">
+                    <a href="/index/" class="tab-link link active">
+                        <i class="ri-home-2-line"></i>
+                        <span>Link 1</span>
+                    </a>
+                    <a href="/link2/" class="tab-link link ">
+                        <i class="ri-search-2-line"></i>
+                        <span>Link 2</span>
+                    </a>
+                    <a href="/link3/" class="tab-link link">
+                        <i class="ri-user-line"></i>
+                        <span>Link 3</span>
+                    </a>
+
                 </div>
+            </div>
 
-                <!-- Scrollable page content -->
-                <div class="page-content">
-                    <div class="block">
-                        Conteúdo do link 2
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="index" class="page color-theme-blue">
+
+                <!-- NAV TOPO / NAVBAR -->
+                 <!--<div class="top-nav">
+                    <h1 class="tittle-logo">ACQUA <span>LIFE</span></h1>
+                    <a href="#" class="btn-cart" data-count="0">
+                        <i class="ri-user-line"></i>
+                    </a>
+                 </div>-->
+                
+
+                <!-- TELA DO MEIO / SCROLAVEL  -->
+                 <div class="form-container"> 
+                    <form action="" method="post" class="form">
+                        <img src="/acqualife-app-android/www/img/logo-acqualife.png" alt="acqualife" srcset="">
+                        <h4 class="under-tittle">Que bom ter você por aqui !</h4>
+                    <h1 class="h1-titulo">CADASTRE-SE</h1>
+                    <div class="input-container">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" name="email" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+            </div>
+              <div class="input-container">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" name="password" id="password" placeholder=" " aria-label="Mostrar senha" required>
+                <label for="password">Senha</label>
+                <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+              <p class="text-center">Não tem uma conta? <a href="#">Cadastre-se</a></p>  
+                 </form>   
+                        
                     </div>
+
                 </div>
             </div>
         </div>
@@ -54,6 +95,12 @@
     <!-- Roteamento do app-->
     <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+         // Inicialização do Framework7
+        const app = new Framework7({
+            root: '#app',
+        });
+    </script>
 </body>
-
 </html>
