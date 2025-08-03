@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>Acqualife</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/index.css">
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <!--fontawsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- App root element -->
+    <div id="app">
+        <!--TOGGLE BAR -->
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main ">
+
+            <!-- TAB BAR-->
+            <!--<div class="toolbar toolbar-bottom">
+                <div class="toolbar-inner display-flex">
+                    <a href="/index/" class="tab-link link active">
+                        <i class="ri-home-2-line"></i>
+                        <span>Link 1</span>
+                    </a>
+                    <a href="/link2/" class="tab-link link ">
+                        <i class="ri-search-2-line"></i>
+                        <span>Link 2</span>
+                    </a>
+                    <a href="/link3/" class="tab-link link">
+                        <i class="ri-user-line"></i>
+                        <span>Link 3</span>
+                    </a>
+                </div>
+            </div>-->
+
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="index" class="page color-theme-blue">
+
+                <!-- NAV TOPO / NAVBAR -->
+                <!--<div class="top-nav">
+                    <h1 class="tittle-logo">ACQUA <span>LIFE</span></h1>
+                    <a href="#" class="btn-cart" data-count="0">
+                        <i class="ri-user-line"></i>
+                    </a>
+                </div>-->
+
+                <!-- TELA DO MEIO / SCROLAVEL  -->
+                <div class="form-container">
+                    <form action="/register" method="post" class="form" id="registerForm">
+                        <img src="img/logo-acqualife.png" alt="acqualife" srcset="">
+                        <h4 class="under-tittle">Que bom ter você por aqui!</h4>
+                        <h1 class="h1-titulo">CADASTRE-SE</h1>
+
+                        <!-- INPUTS DO FORMULARIO -->
+                        <!-- Nome -->
+                        <div class="input-container">
+                            <i class="fa-solid fa-user input-icon"></i>
+                            <input type="text" name="name" id="name" placeholder=" " required>
+                            <label for="name">Nome Completo</label>
+                        </div>
+
+                        <!-- Telefone (WhatsApp) -->
+                        <div class="input-container">
+                            <i class="fas fa-phone input-icon"></i>
+                            <input type="tel" name="phone" id="phone"
+                                pattern="[0-9]{11}"
+                                title="Digite um número com DDD (ex: 11987654321)"
+                                placeholder=" " required>
+                            <label for="phone">WhatsApp (com DDD)</label>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="input-container">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" name="email" id="email" placeholder=" " required>
+                            <label for="email">Email</label>
+                        </div>
+
+                        <!-- Senha -->
+                        <div class="input-container">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" name="password" id="password"
+                                minlength="8"
+                                placeholder=" " required>
+                            <label for="password">Senha (mínimo 8 caracteres)</label>
+                            <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                        </div>
+
+                        <div class="input-container" id="verificationCodeContainer" style="display:none;">
+                            <i class="fas fa-shield-alt input-icon"></i>
+                            <input type="text" name="verification_code" id="verification_code"
+                                placeholder=" " required>
+                            <label for="verification_code">Código de Verificação</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="submitButton">Cadastrar</button>
+                        <p class="text-center">Já tem uma conta? <a href="login.html" class="external">Logar-se</a></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        // Inicialização do Framework7
+        const app = new Framework7({
+            root: '#app',
+        });
+    </script>
+    <script src="js/auth.js"></script> <!-- Ou script inline abaixo -->
+    <script>
+       document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        password: document.getElementById('password').value
+    };
+
+    console.log("Dados que serão enviados:", formData); // 👈 Verifique no console
+
+    try {
+        const response = await fetch('http://SEU_IP:5000/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        console.log("Resposta do servidor:", await response.text()); // 👈 Mostra a resposta crua
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+    }
+});
+    </script>
+</body>
+
+</html>
