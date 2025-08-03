@@ -1,51 +1,59 @@
+/* ------------------------------ FONTES ------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-:root{
+/*Confortaa*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap');
 
+/* ------------------------------ VARIÁVEIS ------------------------------ */
+:root {
     --branco: #fff;
+    --cinza: #999;
     --gelo: #f1f1f1;
-    --azul: #ffc800;
+    --azul: #00b7ff;
     --preto: #000000;
 }
 
-body{
-    font-family: Poppins;
+/* ------------------------------ GLOBAL ------------------------------ */
+body {
+    font-family: Poppins;;
 }
 
-.toolbar{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ------------------------------ TOOLBAR ------------------------------ */
+.toolbar {
     height: 80px;
-    
-    
 }
 
-.tab-link{
+.tab-link {
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
-    
 }
 
-.toolbar-inner .link{   
+.toolbar-inner .link {   
     color: var(--azul); 
-    flex:1;
+    flex: 1;
     height: 80px;  
     line-height: 25px; 
-	font-weight:bold;   
+    font-weight: bold;   
     background-color: var(--branco); 
     border-top: 1px solid var(--gelo);
 }
 
-.toolbar-inner .link:not(.active){
+.toolbar-inner .link:not(.active) {
     color: var(--preto);
-	font-weight:normal;
+    font-weight: normal;
 }
 
-.toolbar-inner > .link i{
+.toolbar-inner > .link i {
     font-size: 28px;
 }
 
-
-.top-nav{
+/* ------------------------------ NAVBAR SUPERIOR ------------------------------ */
+.top-nav {
     width: 100%;
     background-color: #ffc800;
     height: 60px;
@@ -54,17 +62,16 @@ body{
     justify-content: space-between;
 }
 
-.tittle-logo{
+.tittle-logo {
     font-weight: 600;
     margin-left: 5%;
-
 }
 
-.tittle-logo span{
+.tittle-logo span {
     color: var(--azul);
 }
 
-.btn-cart{
+.btn-cart {
     background-color: var(--branco);
     width: 40px;
     height: 40px;
@@ -75,6 +82,133 @@ body{
     border-radius: 50%;
     border: 1px solid var(--gelo);
     font-size: 24px;
-    color:var(--preto) ;
+    color: var(--preto);
 }
 
+/* ------------------------------ LOGIN ------------------------------ */
+
+.h1-titulo{
+    font-size: 40px;
+    padding-bottom: 10px;
+    font-family: 'poppins';
+    font-weight: 500; /* ou 300, 400, 700 */
+    color: var(--azul);
+    margin-top: -12px;
+}
+
+.under-tittle{
+    font-size: 20px;
+    font-family: 'poppins';
+    font-weight: 300; /* ou 300, 400, 700 */
+    color: var(--cinza);
+    margin-top: -50px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form img {
+    width: 300px;
+    height: 300px;
+ 
+}
+
+.input-container {
+    position: relative;
+    width: 80%;
+    margin-bottom: 25px;
+}
+
+.input-container label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cinza);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: var(--branco);
+    padding: 0 5px;
+}
+
+.input-container input {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid var(--gelo);
+    padding-left: 45px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: var(--azul);
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 40px;
+    font-size: 12px;
+    color: var(--azul);
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--azul);
+}
+
+/* Ícone do olho */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777;
+}
+
+.password-toggle:hover {
+    color: var(--azul);
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.text-center a {
+    color: var(--azul);
+    text-decoration: none;
+}
+
+button.btn-primary {
+    width: 80%;
+    height: 50px;
+    background-color: var(--azul);
+    color: var(--branco);
+    border: none;
+    border-radius: 90px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: poppins, sans-serif;
+    transition: scale 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: rgb(71, 194, 255);
+    transform: scale(1.05);
+}

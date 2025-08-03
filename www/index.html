@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- Required meta tags-->
     <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Color theme for statusbar (Android only) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <!-- Your app title -->
     <title>Acqualife</title>
-    <!-- Path to Framework7 Library Bundle CSS -->
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="lib/framework7-bundle.min.css">
-    <!-- CSS PERSONALIZADO PARA MENU-->
     <link rel="stylesheet" href="css/index.css">
-    <!--Ícones Material Design-->
     <link rel="stylesheet" href="css/materialdesignicons.min.css">
-     <!--Ícones do REMIXICON-->
-     <link rel="stylesheet" href="css/remixicon/remixicon.css">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Cordova (apenas uma chamada) -->
+    <script src="cordova.js"></script>
 </head>
 
 <body>
-    <!-- App root element -->
     <div id="app">
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main " style="background-color: aqua;">
-
-            <!-- TAB BAR-->
-            <div class="toolbar toolbar-bottom">
-                <div class="toolbar-inner display-flex">
-                    <a href="/index/" class="tab-link link active">
-                        <i class="ri-home-2-line"></i>
-                        <span>Link 1</span>
-                    </a>
-                    <a href="/link2/" class="tab-link link ">
-                        <i class="ri-search-2-line"></i>
-                        <span>Link 2</span>
-                    </a>
-                    <a href="/link3/" class="tab-link link">
-                        <i class="ri-user-line"></i>
-                        <span>Link 3</span>
-                    </a>
-
-                </div>
-            </div>
-
-            <!-- Initial Page, "data-name" contains page name -->
+        <div class="view view-main">
             <div data-name="index" class="page color-theme-blue">
-
-                <!-- NAV TOPO-->
-                 <div class="top-nav">
-                    <h1 class="tittle-logo">ACQUA <span>LIFE</span></h1>
-                    <a href="#" class="btn-cart" data-count="0">
-                        <i class="ri-user-line"></i>
-                    </a>
-                 </div>
-                
-
-                <!-- Scrollable page content -->
-                <div class="page-content">
-                    <div class="block">
-                        Conteúdo do link 1
-                    </div>
+                <div class="form-container"> 
+                    <form action="" method="post" class="form">
+                        <img src="img/logo-acqualife.png" alt="Acqualife">
+                        <h4 class="under-tittle">Bem-vindo de volta!</h4>
+                        <h1 class="h1-titulo">LOGIN</h1>
+                        
+                        <div class="input-container">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" name="email" id="email" placeholder=" " required>
+                            <label for="email">Email</label>
+                        </div>
+                        
+                        <div class="input-container">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" name="password" id="password" placeholder=" " required>
+                            <label for="password">Senha</label>
+                            <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <p class="text-center">Não tem uma conta? <a href="link2.html" class="external">Cadastre-se</a></p>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Path to Framework7 Library Bundle JS-->
-    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-	<!-- jQuery -->
-	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
-    <!-- Roteamento do app-->
-    <script type="text/javascript" src="js/routes.js"></script>
-    <script src="cordova.js"></script>
-</body>
 
+    <!-- JavaScript -->
+    <script src="lib/framework7-bundle.min.js"></script>
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Inicialização do Framework7
+        var app = new Framework7({
+            root: '#app',
+            routes: [
+                {
+                    path: '/link2/',
+                    url: 'link2.html',
+                }
+            ]
+        });
+        
+        // Adiciona classe external para links
+        $(document).on('click', 'a.external', function (e) {
+            e.preventDefault();
+            var link = $(this).attr('href');
+            app.views.main.router.navigate(link);
+        });
+    </script>
+</body>
 </html>
