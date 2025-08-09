@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <!-- Required meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#2196f3">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#2196f3" />
     <title>Acqualife</title>
-    
+
     <!-- CSS -->
-    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/materialdesignicons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Cordova (apenas uma chamada) -->
     <script src="cordova.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <div class="view view-main">
-            <div data-name="index" class="page color-theme-blue">
-                <div class="form-container"> 
-                    <form action="" method="post" class="form">
-                        <img src="img/logo-acqualife.png" alt="Acqualife">
-                        <h4 class="under-tittle">Bem-vindo de volta!</h4>
-                        <h1 class="h1-titulo">LOGIN</h1>
-                        
-                        <div class="input-container">
-                            <i class="fas fa-envelope input-icon"></i>
-                            <input type="email" name="email" id="email" placeholder=" " required>
-                            <label for="email">Email</label>
-                        </div>
-                        
-                        <div class="input-container">
-                            <i class="fas fa-lock input-icon"></i>
-                            <input type="password" name="password" id="password" placeholder=" " required>
-                            <label for="password">Senha</label>
-                            <i class="fas fa-eye password-toggle" id="togglePassword"></i>
-                            
-                        </div>
-                        <a href="login.html" class="esqueceu-senha"> Esqueceu a senha ?</a>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                        <p class="text-center">Não tem uma conta? <a href="cadastro.html" class="external">Cadastre-se</a></p>
-                    </form>
-                </div>
-            </div>
+      <div class="view view-main">
+        <div data-name="index" class="page color-theme-blue">
+          <div class="form-container">
+            <form action="" method="post" class="form">
+              <img src="img/logo-acqualife.png" alt="Acqualife" />
+              <h4 class="under-tittle">Bem-vindo de volta!</h4>
+              <h1 class="h1-titulo">LOGIN</h1>
+
+              <div class="input-container">
+                <i class="fas fa-envelope input-icon"></i>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder=" "
+                  required
+                />
+                <label for="email">Email</label>
+              </div>
+
+              <div class="input-container">
+                <i class="fas fa-lock input-icon"></i>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder=" "
+                  required
+                />
+                <label for="password">Senha</label>
+                <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+              </div>
+              <a href="login.html" class="esqueceu-senha">
+                Esqueceu a senha ?</a
+              >
+              <button type="submit" class="btn btn-primary">Entrar</button>
+              <p class="text-center">
+                Não tem uma conta?
+                <a href="cadastro.html" class="external">Cadastre-se</a>
+              </p>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- JavaScript -->
@@ -55,25 +77,25 @@
     <script src="lib/jquery-3.7.0.min.js"></script>
     <script src="js/routes.js"></script>
     <script src="js/script.js"></script>
-    
+
     <script>
-        // Inicialização do Framework7
-        var app = new Framework7({
-            root: '#app',
-            routes: [
-                {
-                    path: '/cadastro/',
-                    url: 'cadastro.html',
-                }
-            ]
-        });
-        
-        // Adiciona classe external para links
-        $(document).on('click', 'a.external', function (e) {
-            e.preventDefault();
-            var link = $(this).attr('href');
-            app.views.main.router.navigate(link);
-        });
+      // Inicialização do Framework7
+      var app = new Framework7({
+        root: "#app",
+        routes: [
+          {
+            path: "/cadastro/",
+            url: "cadastro.html",
+          },
+        ],
+      });
+
+      // Adiciona classe external para links
+      $(document).on("click", "a.external", function (e) {
+        e.preventDefault();
+        var link = $(this).attr("href");
+        app.views.main.router.navigate(link);
+      });
     </script>
-</body>
+  </body>
 </html>

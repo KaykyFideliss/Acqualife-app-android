@@ -59,8 +59,8 @@ var app = new Framework7({
     },
     //LINKS POR PAGINA
     {
-      path: '/link3/',
-      url: 'link3.html',
+      path: '/home/',
+      url: 'home.html',
       animate: false,
 	  on: {
 		pageBeforeIn: function (event, page) {
@@ -80,8 +80,8 @@ var app = new Framework7({
     //LINKS POR PAGINA
        //LINKS POR PAGINA
     {
-      path: '/link4/',
-      url: 'link4.html',
+      path: '/cadastro/',
+      url: 'cadastro.html',
       animate: false,
 	  on: {
 		pageBeforeIn: function (event, page) {
