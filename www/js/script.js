@@ -21,3 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Função que centraliza a bolinha na aba ativa
+function moveCircleTo(el, circle) {
+  const offset = el.offsetLeft + (el.offsetWidth / 2) - (circle.offsetWidth / 2);
+  circle.style.transform = `translate(${offset}px, -50%)`;
+}
+
+
+
+
+
