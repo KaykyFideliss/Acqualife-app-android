@@ -34,64 +34,65 @@
         <div data-name="home" class="page color-theme-blue">
           <!-- Barra de abas (tab bar) fixa na parte inferior, estilo Apple -->
           <div class="toolbar toolbar-bottom apple-toolbar">
-  <div class="toolbar-inner">
-    <div class="circle-indicator"></div>
+            <div class="toolbar-inner">
+              <!-- Botão da aba Home -->
+              <a href="home.html" class="tab-link " data-route="home" >
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+              </a>
 
-    <!-- Botão da aba Home -->
-    <a href="home.html" class="tab-link active" data-index="0">
-      <i class="fa-solid fa-house"></i>
-      <span>Home</span>
-    </a>
+              <!-- Botão da aba Buscar/Cadastro -->
+              <a href="./Sobre.html" class="tab-link " data-route="cadastro">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Sobre</span>
+              </a>
 
-    <!-- Botão da aba Buscar/Cadastro -->
-    <a href="Sobre.html" class="tab-link" data-index="1">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <span>Sobre</span>
-    </a>
-
-    <!-- Botão da aba Perfil/Login -->
-    <a href="user.html" class="tab-link" data-index="2">
-      <i class="fa-solid fa-user"></i>
-      <span>Perfil</span>
-    </a>
-  </div>
-</div>
-
+              <!-- Botão da aba Perfil/Login -->
+              <a href="./user.html" class="tab-link active  " data-route="user">
+                <i class="fa-solid fa-user"></i>
+                <span>Perfil</span>
+              </a>
+            </div>
+          </div>
   <!-- ----------------------- NAVBA----------------------- -->
-         <div class="top-nav">
-            <a href="/u" class="btn-cart" data-count="0">
-              <span class="tittle-logo">ACQUA</span>
-            </a>
-            <!-- Ícone de configurações que leva ao login -->
-            <a href="/login/"><i class="fa-solid fa-gear icon-style"></i></a>
-          </div>
-
-          <!-- Conteúdo principal da página, área scrollável -->
+          <!-- <div class="top-nav " "> -->
+          <!-- </div> -->
+        <!-- Conteúdo principal da página, área scrollável -->
           <div class="page-content scrollable">
-            <!--  <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus incidunt unde molestias velit quos ratione esse alias id exercitationem quaerat itaque quidem quasi ipsa labore, libero maxime quia illo sapiente!
+            
+              <div class="container-titulo">
+                <div class="SUBtitulo-fixo">
+                Home
+              </div>
+              <div class="titulo-fixo">
+                ACQUALIFE
+              </div>
+              
+            </div>
+            
+           
+              <div class="container-idf">
+                <img src="img/avatares/avatar-1.png" alt="" class="img-avatar"/>
+                <div class="texto-identificacao">
+                  <p class="nome-usuario">Olá, Visitante!</p>
+                  <p class="email-usuario">Faça seu login ou cadastre-se</p>
+                </div>
+              </div>
 
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam culpa dignissimos voluptates eius non porro magnam nam, harum, facilis architecto provident ducimus molestiae at reprehenderit minus illum hic eum? Ex?<br><br><br><br>
-              <br>
-              <br>
-              <br>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellendus, voluptatum incidunt maiores quod dolores adipisci? Assumenda obcaecati doloremque necessitatibus, id hic similique nobis ex? Consectetur possimus deleniti unde. Eius.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur molestias enim dolorem iste distinctio deserunt aperiam nam porro ut autem magnam, fugit modi, accusamus repellendus praesentium. Facere aspernatur perferendis praesentium!
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at aut dolor quae sequi impedit officiis quidem, unde id consequatur natus accusamus saepe corporis quo similique cupiditate repellendus vel! Quibusdam?
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati repellat ut, fugiat dolores quam iure incidunt facere. Odio omnis, dolorem quod molestiae alias veritatis incidunt tempore architecto impedit, veniam rerum?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellendus, voluptatum incidunt maiores quod dolores adipisci? Assumenda obcaecati doloremque necessitatibus, id hic similique nobis ex? Consectetur possimus deleniti unde. Eius.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur molestias enim dolorem iste distinctio deserunt aperiam nam porro ut autem magnam, fugit modi, accusamus repellendus praesentium. Facere aspernatur perferendis praesentium!
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at aut dolor quae sequi impedit officiis quidem, unde id consequatur natus accusamus saepe corporis quo similique cupiditate repellendus vel! Quibusdam?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis repellendus, voluptatum incidunt maiores quod dolores adipisci? Assumenda obcaecati doloremque necessitatibus, id hic similique nobis ex? Consectetur possimus deleniti unde. Eius.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur molestias enim dolorem iste distinctio deserunt aperiam nam porro ut autem magnam, fugit modi, accusamus repellendus praesentium. Facere aspernatur perferendis praesentium!
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at aut dolor quae sequi impedit officiis quidem, unde id consequatur natus accusamus saepe corporis quo similique cupiditate repellendus vel! Quibusdam?
-
-            </P> -->
-          </div>
+              <div class="dropdown">
+                
+              </div>
         <!-- fim da página "home" -->
       </div>
     </div>
     <!-- fim da raiz do app -->
 
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>
     <script src="js/script.js"></script>
 
