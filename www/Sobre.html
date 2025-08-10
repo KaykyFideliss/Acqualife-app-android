@@ -34,40 +34,59 @@
         <div data-name="home" class="page color-theme-blue">
           <!-- Barra de abas (tab bar) fixa na parte inferior, estilo Apple -->
           <div class="toolbar toolbar-bottom apple-toolbar">
-  <div class="toolbar-inner">
-    <div class="circle-indicator"></div>
+            <div class="toolbar-inner">
+              <!-- Botão da aba Home -->
+              <a href="home.html" class="tab-link " data-route="home" >
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+              </a>
 
-    <!-- Botão da aba Home -->
-    <a href="home.html" class="tab-link active" data-index="0">
-      <i class="fa-solid fa-house"></i>
-      <span>Home</span>
-    </a>
+              <!-- Botão da aba Buscar/Cadastro -->
+              <a href="./Sobre.html" class="tab-link active" data-route="cadastro">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Sobre</span>
+              </a>
 
-    <!-- Botão da aba Buscar/Cadastro -->
-    <a href="Sobre.html" class="tab-link" data-index="1">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <span>Sobre</span>
-    </a>
-
-    <!-- Botão da aba Perfil/Login -->
-    <a href="user.html" class="tab-link" data-index="2">
-      <i class="fa-solid fa-user"></i>
-      <span>Perfil</span>
-    </a>
-  </div>
-</div>
-
+              <!-- Botão da aba Perfil/Login -->
+              <a href="./user.html" class="tab-link   " data-route="user">
+                <i class="fa-solid fa-user"></i>
+                <span>Perfil</span>
+              </a>
+            </div>
+          </div>
   <!-- ----------------------- NAVBA----------------------- -->
-         <div class="top-nav">
-            <a href="/u" class="btn-cart" data-count="0">
-              <span class="tittle-logo">ACQUA</span>
-            </a>
-            <!-- Ícone de configurações que leva ao login -->
-            <a href="/login/"><i class="fa-solid fa-gear icon-style"></i></a>
+          <div class="top-nav " style="height: 45px !important;">
+            
           </div>
 
           <!-- Conteúdo principal da página, área scrollável -->
           <div class="page-content scrollable">
+
+            <div class="form-container">
+              <div class="titulo-fixo">
+                ACQUALIFE
+              </div>
+              <main>
+                <div class="img-container">
+                  <img src="img/prototipo.png" alt="Sobre Acqualife" class="responsive-img" />
+                </div>
+              </main>
+              
+              <div class="container-btn">
+                <div class="btns">
+
+
+                  <div class="scroll-container">
+  <div class="scroll-content">
+    <button>Item 1</button>
+    <button>Item 2</button>
+    <button>Item 3</button>
+    <!-- Adicione quantos botões/quiser -->
+    <button>Item 20</button>
+  </div>
+</div>
+                </div>
+              </div>
             <!--  <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus incidunt unde molestias velit quos ratione esse alias id exercitationem quaerat itaque quidem quasi ipsa labore, libero maxime quia illo sapiente!
 
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam culpa dignissimos voluptates eius non porro magnam nam, harum, facilis architecto provident ducimus molestiae at reprehenderit minus illum hic eum? Ex?<br><br><br><br>
@@ -92,6 +111,12 @@
     </div>
     <!-- fim da raiz do app -->
 
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>
     <script src="js/script.js"></script>
 
@@ -125,6 +150,56 @@
             console.error("Erro na requisição:", error);
           }
         });
+    </script>
+
+    <!-- SCRIPT PARA CARROSEL DOS BOTOES  -->
+    <script>
+  const scrollContainer = document.querySelector('.scroll-container');
+let isDragging = false;
+let isHovered = false;
+let startX, scrollLeft;
+let scrollSpeed = 1;
+
+// Controle de arraste (seu código original)
+scrollContainer.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  isHovered = true; // Pausa o auto-scroll enquanto arrasta
+  startX = e.pageX - scrollContainer.offsetLeft;
+  scrollLeft = scrollContainer.scrollLeft;
+});
+
+scrollContainer.addEventListener('mouseleave', () => {
+  isDragging = false;
+  isHovered = false;
+});
+
+scrollContainer.addEventListener('mouseup', () => {
+  isDragging = false;
+  isHovered = false;
+});
+
+scrollContainer.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - scrollContainer.offsetLeft;
+  const walk = (x - startX) * 2;
+  scrollContainer.scrollLeft = scrollLeft - walk;
+});
+
+// Auto-scroll que pausa durante interação
+function autoScroll() {
+  if (!isDragging && !isHovered) {
+    scrollContainer.scrollLeft += scrollSpeed;
+    
+    // Reinicia ao chegar no final
+    if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+      scrollContainer.scrollLeft = 0;
+    }
+  }
+  requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
     </script>
   </body>
 </html>
