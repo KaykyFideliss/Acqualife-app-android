@@ -240,6 +240,7 @@ button.btn-primary:hover {
 /* Estilo Apple-like */
 .apple-toolbar {
   background: transparent !important; /* remove fundo padrão */
+  backdrop-filter: none !important; /*permite que você aplique efeitos gráficos, como desfoque ou mudança de cores*/
   border: none !important;
   box-shadow: none !important;
   padding-bottom: 10px;
@@ -424,13 +425,39 @@ button.btn-primary:hover {
 
 .NossaHist{
 
-  
-   background-color: yellow;  
    margin-inline: 20px;
    margin-top: 10px;
 }
 
+.h1-NossaHist {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--azul);
+  text-align: center;
+  margin-top: 20px;
+  
+  
+}
 
+.p-NossaHist ,.p-ComoFunciona {
+  font-size: 16px;
+  color: var(--preto);
+  text-align: justify;
+  margin: 20px;
+  line-height: 1.6;
+  font-family: "poppins", sans-serif;
+}
+
+.ComoFunciona{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  color: var(--azul);
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 30px;  
+  
+}
 
 
 
