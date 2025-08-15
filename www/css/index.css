@@ -14,7 +14,7 @@
   --preto: #000000;
 
   font-space: 'space grotesk', sans-serif;
-  font-poppins: 'poppins', sans-serif;  
+  font-poppins: poopins;  
   font-bebas: 'bebas neue', sans-serif;
   font-comfottaa: 'comfortaa', sans-serif;
 
@@ -40,7 +40,7 @@ body {
 /* ------------------------------ TOOLBAR ------------------------------ */
 .toolbar {
   height: 80px;
-  margin-bottom: 35px;
+  margin-bottom: 25px; 
 }
 
 .tab-link {
@@ -328,6 +328,7 @@ button.btn-primary:hover {
   font-weight: bold;
   color: var(--azul);
   text-align: center;
+  margin-top: 48px;
   
   
 }
@@ -396,7 +397,7 @@ button.btn-primary:hover {
   align-items: center;
   margin: 0 auto; /* Centraliza o container */
   margin-top: 20px;
-  border-radius: 15px; /* Bordas arredondadas */
+  border-radius: 20px; /* Bordas arredondadas */
   overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse */
   display: flex;
   justify-content: center; /* Centraliza a imagem horizontalmente */
@@ -416,10 +417,12 @@ button.btn-primary:hover {
   /* Adicione media queries para ajustes específicos em diferentes telas */
   @media (max-width: 768px) {
     width: 95%; /* Ajuste para mobile */
+    border-radius: 20px;
   }
   
   @media (max-width: 480px) {
     width: 100%; /* Ocupa toda a largura em telas muito pequenas */
+    
   }
 }
 
@@ -429,7 +432,7 @@ button.btn-primary:hover {
    margin-top: 10px;
 }
 
-.h1-NossaHist {
+.h1-NossaHist, .h1-ComoFunciona{
   font-family: "Space Grotesk", sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -440,7 +443,7 @@ button.btn-primary:hover {
   
 }
 
-.p-NossaHist ,.p-ComoFunciona {
+.p-NossaHist  {
   font-size: 16px;
   color: var(--preto);
   text-align: justify;
@@ -452,28 +455,227 @@ button.btn-primary:hover {
 .ComoFunciona{
   font-family: "Space Grotesk", sans-serif;
   font-size: 30px;
-  color: var(--azul);
+  color: var(--branco);
+  text-align: center;
+  border-radius: 30px;
+  background-color: var(--azul);  
+  padding-inline: 20px;
+    padding-bottom: 45px;
+    margin-bottom: 40px;
+  
+}
+
+.p-ComoFunciona {
+  font-size: 16px;
+  color: var(--branco);
+  text-align: justify;
+  margin: 20px;
+
+  line-height: 1.6;
+  font-family: "poppins", sans-serif;
+}
+
+.h1-ComoFunciona{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--branco);
   text-align: center;
   margin-top: 20px;
-  border-radius: 30px;  
+  padding-top: 20px;
+  
   
 }
 
 
+/* FRASE IMPACTANTE */
+/* CSS Atualizado */
+.container-frase-impactante {
+  display: flex;
+  flex-direction: row; /* Lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  padding: 20px;
+  gap: 20px; /* Espaço entre logo e texto */
+  flex-wrap: wrap; /* Permite quebrar linha em telas muito pequenas */
+ 
+}
+
+.image-planeta {
+  flex: 0 0 auto; /* Não cresce, não encolhe */
+}
+
+.img-abraço-planeta {
+  max-width: 100px; /* Tamanho reduzido para mobile */
+  height: auto;
+}
+
+.text-impact {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1; /* Ocupa o espaço restante */
+  min-width: 200px; /* Largura mínima para o texto */
+}
+
+.p-impact {
+  color: var(--azul);
+  font-size: 1.5rem; /* Tamanho adequado para mobile */
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+.highlight {
+  color: #328135;
+}
+
+/* Media Query para telas maiores */
+@media (min-width: 600px) {
+  .img-abraço-planeta {
+    max-width: 150px; /* Aumenta um pouco em telas maiores */
+  }
+  
+  .txt-planeta {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 400px) {
+  .container-frase-impactante {
+    flex-direction: column; /* Empilha em telas muito pequenas */
+    text-align: center;
+  }
+  
+  .img-abraço-planeta {
+    margin-bottom: 15px;
+  }
+}
 
 
 
+/* NOSSO TIME --------------------------------*/
+
+section.section-team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 20px;
+  padding-bottom: 100px;
+  justify-items: center; /* Centraliza os cards */
+}
+
+.card-team {
+  position: relative;
+  width: 100%;
+  max-width: 250px; /* limite máximo */
+  aspect-ratio: 5/7; /* mantém proporção */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-team:hover {
+  transform: scale(1.05);
+}
+
+.card-team img.img-team {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.card-team:hover img.img-team {
+  filter: grayscale(0%);
+}
+
+.info-team {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background-color: white;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-team:hover .info-team {
+  background-color: var(--azul);
+  color: white;
+}
+
+.info-team .h3-time {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.info-team p {
+  margin-bottom: 10px;
+  font-size: 10px;
+  align-items: center;
+  text-align: center;
+  
+  justify-content: center;
+}
+
+.icons-team {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-alinhamento{
+  padding-top: 4px /* metodo que consegui alinhar o icon com o Desenvolvedor do card  */
+}
+
+.icons-team a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.card-team:hover .icons-team a {
+  color: var(--branco);
+}
+
+.icone-team:hover {
+  color: var(--cinza);
+}
+
+
+/* Responsivo: 2 colunas no mobile */
+@media (max-width: 768px) {
+  section.section-team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .card-team {
+    max-width: 180px; /* diminui para caber */
+  }
+}
 
 
 
+.copy{
+    font-size:20px;
+    color:#fff;
+    text-align: center;
+    justify-content: center;
+}
 
+.li-footer{
 
-
-
-
-
-
-
-
-
-
+    text-decoration: none;
+    list-style-type: none;
+}
