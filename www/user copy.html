@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Carrossel</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .carousel {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.6s ease;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+    text-align: center;
+    cursor: pointer;
+    transform: scale(0.9);
+  }
+
+  .carousel-item img {
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    transition: transform 0.4s ease;
+  }
+
+  .carousel-item img:hover {
+    transform: scale(1.05);
+  }
+
+  .name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .control-btn {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="carousel-track">
+    <div class="carousel-item" onclick="nextSlide()">
+      <img src="img/logo-acqualife.png" alt="Pessoa 1">
+      <div class="name">Maria Silva</div>
+    </div>
+    <div class="carousel-item" onclick="nextSlide()">
+      <img src="img/logo-acqualife.png" alt="Pessoa 2">
+      <div class="name">João Santos</div>
+    </div>
+    <div class="carousel-item" onclick="nextSlide()">
+      <img src="img/logo-acqualife.png  " alt="Pessoa 3">
+      <div class="name">Ana Costa</div>
+    </div>
+  </div>
+  
+  <div class="controls">
+    <button class="control-btn" onclick="prevSlide()">&#10094;</button>
+    <button class="control-btn" onclick="nextSlide()">&#10095;</button>
+  </div>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const track = document.querySelector('.carousel-track');
+  const items = document.querySelectorAll('.carousel-item');
+  const totalItems = items.length;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateCarousel();
+  }
+
+  setInterval(nextSlide, 4000); // automático a cada 4s
+</script>
+
+</body>
+</html>

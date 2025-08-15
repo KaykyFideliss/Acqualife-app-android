@@ -1,106 +1,207 @@
-<!DOCTYPE >
+<!DOCTYPE>
 <html>
-  <head>
-    <!-- Required meta tags-->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <!-- Color theme for statusbar (Android only) -->
-    <meta name="theme-color" content="#2196f3" />
-    <!-- Your app title -->
-    <title>Acqualife</title>
-    <!-- Path to Framework7 Library Bundle CSS -->
-    <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
-    <!-- CSS PERSONALIZADO PARA MENU-->
-    <link rel="stylesheet" href="css/index.css" />
-    <!--Ícones Material Design-->
-    <link rel="stylesheet" href="css/materialdesignicons.min.css" />
-    <!--fontawsome-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <!-- Raiz do app Framework7 -->
-    <div id="app">
-      <!-- Visualização principal do Framework7 -->
-      <div class="view view-main">
-        <!-- Página principal com nome "home" -->
-        <div data-name="home" class="page color-theme-blue">
-          <!-- Barra de abas (tab bar) fixa na parte inferior, estilo Apple -->
-          <div class="toolbar toolbar-bottom apple-toolbar">
-            <div class="toolbar-inner">
-              <!-- Botão da aba Home -->
-              <a href="/home/" class="tab-link" data-route="home">
-      <i class="fa-solid fa-house"></i>
-      <span>Home</span>
-    </a>
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Color theme for statusbar (Android only) -->
+  <meta name="theme-color" content="#2196f3" />
+  <!-- Your app title -->
+  <title>Acqualife</title>
+  <!-- Path to Framework7 Library Bundle CSS -->
+  <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
+  <!-- CSS PERSONALIZADO PARA MENU-->
+  <link rel="stylesheet" href="css/index.css" />
+  <!--Ícones Material Design-->
+  <link rel="stylesheet" href="css/materialdesignicons.min.css" />
+  <!--fontawsome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <a href="/sobre/" class="tab-link active " data-route="sobre" onclick="irParaHome()">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <span>Sobre</span>
-    </a>
 
-    <a href="/user/" class="tab-link " data-route="user">
-      <i class="fa-solid fa-user"></i>
-      <span>Perfil</span>
-    </a>
+
+</head>
+
+<body>
+  <!-- Raiz do app Framework7 -->
+  <div id="app">
+    <!-- Visualização principal do Framework7 -->
+    <div class="view view-main">
+      <!-- Página principal com nome "home" -->
+      <div data-name="home" class="page color-theme-blue">
+        <!-- Barra de abas (tab bar) fixa na parte inferior, estilo Apple -->
+        <div class="toolbar toolbar-bottom apple-toolbar">
+          <div class="toolbar-inner">
+            <!-- Botão da aba Home -->
+            <a href="/home/" class="tab-link" data-route="home">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+
+            <a href="/sobre/" class="tab-link active " data-route="sobre" onclick="irParaHome()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Sobre</span>
+            </a>
+
+            <a href="/user/" class="tab-link " data-route="user">
+              <i class="fa-solid fa-user"></i>
+              <span>Perfil</span>
+            </a>
+          </div>
+        </div>
+        <!-- ----------------------- NAVBA----------------------- -->
+        <div class="top-nav "> <!--style="height: 45px !important;"-->
+
+        </div>
+
+        <!-- Conteúdo principal da página, área scrollável -->
+        <div class="page-content scrollable " ">
+
+          
+              <div class=" titulo-fixo">
+          ACQUALIFE
+        </div>
+        <main>
+          <div class="img-container">
+            <img src="img/agua.png" class="responsive-img" alt="Sobre Acqualife" />
+          </div>
+        </main>
+
+
+
+        <section class="NossaHist-container">
+          <div class="NossaHist">
+            <h1 class="h1-NossaHist">Nossa História</h1>
+            <p class="p-NossaHist">
+              A Acqualife é uma empresa dedicada à preservação dos recursos hídricos, oferecendo soluções inovadoras
+              para o tratamento e reuso de água. Com uma equipe de especialistas apaixonados pela sustentabilidade,
+              buscamos promover práticas que garantam um futuro mais verde e saudável para todos.
+            </p>
+          </div>
+        </section>
+
+        <!--  ----------------------- COMO FUNCIONA --------------- -->
+        <section class="NossaHist-container">
+          <div class="ComoFunciona">
+            <h1 class="h1-ComoFunciona">Como Funciona</h1>
+            <p class="p-ComoFunciona">
+              O Acqualife é um sistema que reaproveita água da sua casa, como do banho, máquina de lavar e chuva. Ele
+              filtra, armazena e distribui essa água para usos como descarga e irrigação, tudo controlado pelo seu
+              celular.
+            </p>
+            <div class="img-container">
+              <img src="img/inventora-criando-em-sua-oficina.jpg" alt="Sobre Acqualife" class="responsive-img" />
             </div>
           </div>
-  <!-- ----------------------- NAVBA----------------------- -->
-          <div class="top-nav " style="height: 45px !important;">
-            
+        </section>
+
+        <section class="impact-section">
+          <div class="container-frase-impactante">
+            <div class="text-impact">
+              <h1 class="p-impact">REAPROVEITANDO HOJE, PRESERVANDO O AMANHÃ.</h1>
+            </div>
+        </section>
+        <section class="NossaHist-container">
+          <div class="ComoFunciona">
+            <h1 class="h1-ComoFunciona">Informaçoes para adicionar </h1>
+            <p class="p-ComoFunciona">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ex nulla repellat cum quia hic veniam doloribus. Repellendus in eius blanditiis! Necessitatibus nesciunt iste quidem. Qui iusto debitis eligendi quam.
+            </p>
+            <div class="img-container">
+              <img src="img/inventora-criando-em-sua-oficina.jpg" alt="Sobre Acqualife" class="responsive-img" />
+            </div>
           </div>
+        </section>
 
-          <!-- Conteúdo principal da página, área scrollável -->
-          <div class="page-content scrollable " ">
 
-            <div class="form-container">
-              <div class="titulo-fixo">
-                ACQUALIFE
-              </div>
-              <main>
-                <div class="img-container">
-                  <img src="https://tse3.mm.bing.net/th/id/OIP._Qjaahc5smyrPFjSZrLfYQHaHa?pid=Api&P=0&h=180" alt="Sobre Acqualife" class="responsive-img" />
+   <section class="team-container">
+        <h1 class="h1-NossaHist" >Colaboradores</h1>
+        <section class="section-team">
+            <div class="card-team coluna1-mov">
+                <img class="img-team" src="img/DaviBrito.jpeg" alt="Profile Picture">
+                <div class="info-team">
+                    <h3 class="h3-time">Kayky Fidelis</h3>
+                    <div class="icons-team ">
+                        <a target="_blank" class="icon-alinhamento"
+                            href="https://www.instagram.com/fidelizx.74/?utm_source=ig_web_button_share_sheet"><i
+                                class="fa-brands fa-instagram icone-team"></i></a>
+                                <p>Desenvolvedor</p>
+                        <a href="" class="icon-alinhamento"><i class="fa-brands fa-linkedin icone-team"></i></a>
+                    </div>
                 </div>
-              </main>
+            </div>
 
-              <section class="NossaHist-container">
-                <div class="NossaHist">
-                  <h1 class="h1-NossaHist">Nossa História</h1>
-                  <p class="p-NossaHist">
-                    A Acqualife é uma empresa dedicada à preservação dos recursos hídricos, oferecendo soluções inovadoras para o tratamento e reuso de água. Com uma equipe de especialistas apaixonados pela sustentabilidade, buscamos promover práticas que garantam um futuro mais verde e saudável para todos.
-                  </p>
+            <div class="card-team coluna1-mov">
+                <img class="img-team" src="img/DaviBrito.jpeg" alt="Profile Picture">
+                <div class="info-team">
+                    <h3 class="h3-time">Kayky Fidelis</h3>
+                    <div class="icons-team ">
+                        <a target="_blank" class="icon-alinhamento"
+                            href="https://www.instagram.com/fidelizx.74/?utm_source=ig_web_button_share_sheet"><i
+                                class="fa-brands fa-instagram icone-team"></i></a>
+                                <p>Desenvolvedor</p>
+                        <a href="" class="icon-alinhamento"><i class="fa-brands fa-linkedin icone-team"></i></a>
+                    </div>
                 </div>
-              </section>
+            </div>
+              <div class="card-team coluna1-mov">
+                              <img class="img-team" src="img/DaviBrito.jpeg" alt="Profile Picture">
+                              <div class="info-team">
+                                  <h3 class="h3-time">Kayky Fidelis</h3>
+                                  <div class="icons-team ">
+                                      <a target="_blank" class="icon-alinhamento"
+                                          href="https://www.instagram.com/fidelizx.74/?utm_source=ig_web_button_share_sheet"><i
+                                              class="fa-brands fa-instagram icone-team"></i></a>
+                                              <p>Desenvolvedor</p>
+                                      <a href="" class="icon-alinhamento"><i class="fa-brands fa-linkedin icone-team"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-team coluna1-mov">
+                              <img class="img-team" src="img/DaviBrito.jpeg" alt="Profile Picture">
+                              <div class="info-team">
+                                  <h3 class="h3-time">Kayky Fidelis</h3>
+                                  <div class="icons-team ">
+                                      <a target="_blank" class="icon-alinhamento"
+                                          href="https://www.instagram.com/fidelizx.74/?utm_source=ig_web_button_share_sheet"><i
+                                              class="fa-brands fa-instagram icone-team"></i></a>
+                                              <p>Desenvolvedor</p>
+                                      <a href="" class="icon-alinhamento"><i class="fa-brands fa-linkedin icone-team"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-team coluna1-mov">
+                              <img class="img-team" src="img/DaviBrito.jpeg" alt="Profile Picture">
+                              <div class="info-team">
+                                  <h3 class="h3-time">Kayky Fidelis</h3>
+                                  <div class="icons-team ">
+                                      <a target="_blank" class="icon-alinhamento"
+                                          href="https://www.instagram.com/fidelizx.74/?utm_source=ig_web_button_share_sheet"><i
+                                              class="fa-brands fa-instagram icone-team"></i></a>
+                                              <p>Desenvolvedor</p>
+                                      <a href="" class="icon-alinhamento"><i class="fa-brands fa-linkedin icone-team"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-team coluna1-mov">
+                              <img class="img-team" src="img/DaviBrito.jpeg" alt="Profile Picture">
+                              <div class="info-team">
+                                  <h3 class="h3-time">Kayky Fidelis</h3>
+                                  <div class="icons-team ">
+                                      <a target="_blank" class="icon-alinhamento"
+                                          href="https://www.instagram.com/fidelizx.74/?utm_source=ig_web_button_share_sheet"><i
+                                              class="fa-brands fa-instagram icone-team"></i></a>
+                                              <p>Desenvolvedor</p>
+                                      <a href="" class="icon-alinhamento"><i class="fa-brands fa-linkedin icone-team"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                        </section>
+                    </section>
 
-              
-                <section class="NossaHist-container">
-                <div class="ComoFunciona">
-                  <h1 class="h1-ComoFunciona">Como Funciona</h1>
-                  <p class="p-ComoFunciona">
-                  O Acqualife é um sistema que reaproveita água da sua casa, como do banho, máquina de lavar e chuva. Ele filtra, armazena e distribui essa água para usos como descarga e irrigação, tudo controlado pelo seu celular.
-                  </p>
-                  <div class="img-container">
-                  <img src="https://tse3.mm.bing.net/th/id/OIP._Qjaahc5smyrPFjSZrLfYQHaHa?pid=Api&P=0&h=180" alt="Sobre Acqualife" class="responsive-img" />
-                </div>
-                </div>
-              </section>
 
-                           <section class="NossaHist-container">
-                <div class="NossaHist">
-                  <h1 class="h1-NossaHist">Nossa História</h1>
-                  <p class="p-NossaHist">
-                    A Acqualife é uma empresa dedicada à preservação dos recursos hídricos, oferecendo soluções inovadoras para o tratamento e reuso de água. Com uma equipe de especialistas apaixonados pela sustentabilidade, buscamos promover práticas que garantam um futuro mais verde e saudável para todos.
-                  </p>
-                </div>
-              </section>
-          </div>
         <!-- fim da página "home" -->
       </div>
     </div>
@@ -115,7 +216,7 @@
     <script src="cordova.js"></script>
     <script src="js/script.js"></script>
 
-    
+
     <script src="js/auth.js"></script>
 
     <!-- Ou script inline abaixo -->
@@ -150,55 +251,56 @@
 
     <!-- SCRIPT PARA CARROSEL DOS BOTOES  -->
     <script>
-  const scrollContainer = document.querySelector('.scroll-container');
-let isDragging = false;
-let isHovered = false;
-let startX, scrollLeft;
-let scrollSpeed = 1;
+      const scrollContainer = document.querySelector('.scroll-container');
+      let isDragging = false;
+      let isHovered = false;
+      let startX, scrollLeft;
+      let scrollSpeed = 1;
 
-// Controle de arraste (seu código original)
-scrollContainer.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  isHovered = true; // Pausa o auto-scroll enquanto arrasta
-  startX = e.pageX - scrollContainer.offsetLeft;
-  scrollLeft = scrollContainer.scrollLeft;
-});
+      // Controle de arraste (seu código original)
+      scrollContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        isHovered = true; // Pausa o auto-scroll enquanto arrasta
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+      });
 
-scrollContainer.addEventListener('mouseleave', () => {
-  isDragging = false;
-  isHovered = false;
-});
+      scrollContainer.addEventListener('mouseleave', () => {
+        isDragging = false;
+        isHovered = false;
+      });
 
-scrollContainer.addEventListener('mouseup', () => {
-  isDragging = false;
-  isHovered = false;
-});
+      scrollContainer.addEventListener('mouseup', () => {
+        isDragging = false;
+        isHovered = false;
+      });
 
-scrollContainer.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-  e.preventDefault();
-  const x = e.pageX - scrollContainer.offsetLeft;
-  const walk = (x - startX) * 2;
-  scrollContainer.scrollLeft = scrollLeft - walk;
-});
+      scrollContainer.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.scrollLeft = scrollLeft - walk;
+      });
 
-// Auto-scroll que pausa durante interação
-function autoScroll() {
-  if (!isDragging && !isHovered) {
-    scrollContainer.scrollLeft += scrollSpeed;
-    
-    // Reinicia ao chegar no final
-    if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-      scrollContainer.scrollLeft = 0;
-    }
-  }
-  requestAnimationFrame(autoScroll);
-}
+      // Auto-scroll que pausa durante interação
+      function autoScroll() {
+        if (!isDragging && !isHovered) {
+          scrollContainer.scrollLeft += scrollSpeed;
 
-autoScroll();
+          // Reinicia ao chegar no final
+          if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+            scrollContainer.scrollLeft = 0;
+          }
+        }
+        requestAnimationFrame(autoScroll);
+      }
+
+      autoScroll();
     </script>
 
 
 
-  </body>
+</body>
+
 </html>

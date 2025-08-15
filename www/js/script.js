@@ -29,5 +29,15 @@ function moveCircleTo(el, circle) {
 
 
 
-// loadion
+// CARROSEL SOBRE 
+/* Inicialize após o pageInit do F7 */
+document.addEventListener('DOMContentLoaded', function () {
+  new Swiper('.mySwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    autoplay: { delay: 3500, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+  });
+});
 
