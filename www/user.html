@@ -68,14 +68,32 @@
               
             </div>
             
-           
-              <div class="container-idf">
-                <img src="img/avatares/avatar-1.png" alt="" class="img-avatar"/>
-                <div class="texto-identificacao">
-                  <p class="nome-usuario">Olá, Visitante!</p>
-                  <p class="email-usuario">Faça seu login ou cadastre-se</p>
-                </div>
-              </div>
+          <div class="container-idf">
+  <!-- Avatar clicável -->
+  <img src="img/avatares/avatar-1.png" alt="" class="img-avatar" id="avatar" onclick="abrirModal()"/>
+  
+  <div class="texto-identificacao">
+    <p class="nome-usuario">Olá, Visitante!</p>
+    <p class="email-usuario">Faça seu login ou cadastre-se</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="avatarModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal()">&times;</span>
+    <h3>Escolha seu avatar</h3>
+    <div class="grid">
+      <img src="img/avatares/avatar-1.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-2.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-3.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-4.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-5.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-6.png" class="foto" onclick="trocarAvatar(this)">
+    </div>
+  </div>
+</div>
+
 
               <div class="dropdown">
                 
@@ -93,6 +111,7 @@
     <script type="text/javascript" src="js/routes.js"></script>
     <script src="cordova.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/avatar.js"></script>
 
     
     <script src="js/auth.js"></script>

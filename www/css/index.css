@@ -368,6 +368,7 @@ button.btn-primary:hover {
 }
 
 .img-avatar {
+  cursor: pointer;
   width: 170px;
   height: 170px;
   border-radius: 50%;
@@ -391,6 +392,76 @@ button.btn-primary:hover {
   font-weight: 300;
   margin-top: -2px;
 }
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  overflow: hidden; /* evita que nada vaze */
+}
+
+/* grid adaptável */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 10px;
+}
+
+/* avatar dentro do modal */
+.foto {
+  width: 100%;          /* ocupa toda a largura da célula */
+  aspect-ratio: 1/1;    /* sempre quadrado */
+  border-radius: 50%;   /* redondo */
+  border: 2px solid #ccc;
+  cursor: pointer;
+  object-fit: cover;
+  transition: 0.2s;
+  max-width: 100px;     /* nunca passa desse tamanho */
+  margin: 0 auto;       /* centraliza */
+}
+
+.foto:hover {
+  border-color: var(--azul);
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: red;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;       /* ocupa quase toda a tela no celular */
+    padding: 15px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+
+  .foto {
+    max-width: 80px;
+  }
+}
+
 
 /* ------------------SOBRE--------------------------------- */
 /* Estilos para a imagem responsiva */
@@ -681,3 +752,27 @@ section.section-team {
     text-decoration: none;
     list-style-type: none;
 }
+
+
+ .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 12dvh);
+      gap: 10px;
+    }
+
+    .foto {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 2px solid black;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .foto:hover {
+      border-color: gray;
+    }
+
+    .selecionada {
+      border: 4px solid blue;
+    }

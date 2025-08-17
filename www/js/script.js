@@ -29,15 +29,47 @@ function moveCircleTo(el, circle) {
 
 
 
-// CARROSEL SOBRE 
-/* Inicialize após o pageInit do F7 */
-document.addEventListener('DOMContentLoaded', function () {
-  new Swiper('.mySwiper', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 16,
-    autoplay: { delay: 3500, disableOnInteraction: false },
-    pagination: { el: '.swiper-pagination', clickable: true },
-  });
-});
 
+// // TROCA DE FOTO DOS AVATARES ----------USER --------------------
+
+// function abrirModal() {
+//   document.getElementById("avatarModal").style.display = "flex";
+// }
+
+// function fecharModal() {
+//   document.getElementById("avatarModal").style.display = "none";
+// }
+
+// function trocarAvatar(img) {
+//   document.getElementById("avatar").src = img.src;
+//   fecharModal();
+// }
+
+// // Quando a página carregar, verifica se já tem avatar salvo
+// window.onload = function () {
+//   const avatarSalvo = localStorage.getItem("avatar");
+//   if (avatarSalvo) {
+//     document.getElementById("avatar").src = avatarSalvo;
+//   }
+// };
+
+// function abrirModal() {
+//   document.getElementById("avatarModal").style.display = "flex";
+// }
+
+// function fecharModal() {
+//   document.getElementById("avatarModal").style.display = "none";
+// }
+
+// function trocarAvatar(img) {
+//   const novoAvatar = img.src;
+
+//   // troca o avatar na tela
+//   document.getElementById("avatar").src = novoAvatar;
+
+//   // salva no localStorage
+//   localStorage.setItem("avatar", novoAvatar);
+
+//   // fecha o modal
+//   fecharModal();
+// }
