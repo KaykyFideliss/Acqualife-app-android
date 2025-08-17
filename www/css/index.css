@@ -12,6 +12,8 @@
   --gelo: #f1f1f1;
   --azul: #00b7ff;
   --preto: #000000;
+  --backgoundApp:#fafafa;
+
 
   font-space: 'space grotesk', sans-serif;
   font-poppins: poopins;  
@@ -29,8 +31,9 @@
 /* ------------------------------ GLOBAL ------------------------------ */
 body {
   font-family: Poppins;
-  background-color: transparent;
+ 
 }
+
 
 * {
   margin: 0;
@@ -315,7 +318,7 @@ button.btn-primary:hover {
 
 /* Remove fundo do conteúdo da página se estiver branco */
 .page-content {
-  background-color: transparent !important;
+  background-color: var(--branco) !important; /*PAGE CONTENT = FUNDO DO APP */
 }
 
 
@@ -501,13 +504,12 @@ button.btn-primary:hover {
  
 }
 
-.image-planeta {
-  flex: 0 0 auto; /* Não cresce, não encolhe */
-}
 
-.img-abraço-planeta {
-  max-width: 100px; /* Tamanho reduzido para mobile */
-  height: auto;
+
+.img-abraço-planeta{
+height: 50%;
+width: 50%;
+
 }
 
 .text-impact {
