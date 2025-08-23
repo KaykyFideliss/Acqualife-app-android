@@ -21,9 +21,11 @@
 }
 
 .login-message {
+  background-color: #4CAF50;
   text-align: center;
   margin: 10px 0;
-  color: rgb(255, 0, 0); /* muda para verde em caso de sucesso */
+ font-family: poppins, sans-serif;
+  color: rgb(0, 255, 13); /* muda para verde em caso de sucesso */
 }
 
 /* ------------------------------SCROLLBAR------------------------------ */
@@ -116,22 +118,69 @@ body {
 }
 
 /* ------------------------------ LOGIN ------------------------------ */
-
+/* CADASTRO MENSAGEM  */
 #mensagem {
     display: none;
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #4CAF50;
-    color: rgb(255, 0, 0);
+    background: var(--azul);
+    color: var(--branco)  ;
     padding: 15px 25px;
     border-radius: 25px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     z-index: 1000;
     font-family: sans-serif;
     font-size: 16px;
+    font-family: poppins;
 }
+
+
+
+
+/* Container da notificação */
+.notification-content {
+  background-color: var(--azul); /* Verde para sucesso */
+  color: white !important; /* Texto branco */
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed; /* Fixa na tela */
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Distância da direita */
+  z-index: 9999; /* Para ficar sobre outros elementos */
+  min-width: 250px;
+  max-width: 400px;
+  font-family: poppins;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 0.5s ease-out;
+    font-weight: bold;
+    
+}
+
+/* Texto da notificação */
+.notification-text {
+ color: var(--branco) !important;
+  margin: 0;
+font-weight: bold !important;
+}
+
+/* Animação de entrada */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 .h1-titulo {
   font-size: 40px;
@@ -806,6 +855,14 @@ section.section-team {
     text-decoration: none;
     list-style-type: none;
 }
+
+
+
+
+
+
+
+
 
 
 
