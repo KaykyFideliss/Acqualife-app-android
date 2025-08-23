@@ -1,4 +1,4 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -23,7 +23,7 @@
 
 <body>
     <!-- App root element -->
-    <div id="app">
+    <div id="app" style="background-color: var(--backgoundApp);">
         <!--TOGGLE BAR -->
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main ">
@@ -59,7 +59,8 @@
 
                 <!-- TELA DO MEIO / SCROLAVEL  -->
                 <div class="form-container">
-                    <form action="/register" method="post" class="form" id="registerForm">
+                    <form action="www/cadastro.php" method="POST" class="form" id="registerForm">
+
                         <img src="img/logo-acqualife.png" alt="acqualife" srcset="">
                         <h4 class="under-tittle">Que bom ter você por aqui!</h4>
                         <h1 class="h1-titulo">CADASTRE-SE</h1>
@@ -75,11 +76,11 @@
                         <!-- Telefone (WhatsApp) -->
                         <div class="input-container">
                             <i class="fas fa-phone input-icon"></i>
-                            <input type="tel" name="phone" id="phone"
-                                pattern="[0-9]{11}"
-                                title="Digite um número com DDD (ex: 11987654321)"
-                                placeholder=" " required>
-                            <label for="phone">WhatsApp (com DDD)</label>
+                            <input type="tel" name="phone" id="phone" pattern="[0-9]{11}"
+                                title="Digite um número com DDD (ex: 11987654321)" placeholder=" " maxlength="11"
+                                required>
+                            <label for="phone">Telefone (com DDD)</label>
+
                         </div>
 
                         <!-- Email -->
@@ -92,23 +93,17 @@
                         <!-- Senha -->
                         <div class="input-container">
                             <i class="fas fa-lock input-icon"></i>
-                            <input type="password" name="password" id="password"
-                                minlength="8"
-                                placeholder=" " required>
+                            <input type="password" name="password" id="password" minlength="8" placeholder=" " required>
                             <label for="password">Senha (mínimo 8 caracteres)</label>
                             <i class="fas fa-eye password-toggle" id="togglePassword"></i>
                         </div>
 
-                        <div class="input-container" id="verificationCodeContainer" style="display:none;">
-                            <i class="fas fa-shield-alt input-icon"></i>
-                            <input type="text" name="verification_code" id="verification_code"
-                                placeholder=" " required>
-                            <label for="verification_code">Código de Verificação</label>
-                        </div>
 
                         <button type="submit" class="btn btn-primary" id="submitButton">Cadastrar</button>
                         <p class="text-center">Já tem uma conta? <a href="login.html" class="external">Logar-se</a></p>
                     </form>
+
+                    <div id="mensagem">Cadastro feito com sucesso!</div>
                 </div>
 
             </div>
@@ -132,30 +127,51 @@
     </script>
     <script src="js/auth.js"></script> <!-- Ou script inline abaixo -->
     <script>
-       document.getElementById('registerForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        password: document.getElementById('password').value
-    };
+        const form = document.getElementById('registerForm');
+        const mensagem = document.getElementById('mensagem');
 
-    console.log("Dados que serão enviados:", formData); // 👈 Verifique no console
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-    try {
-        const response = await fetch('http://SEU_IP:5000/api/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                password: document.getElementById('password').value
+            };
+
+            console.log("Dados que serão enviados:", formData);
+
+            try {
+                const response = await fetch("http://192.168.1.2/mostra2025/Acqualife-app-android/www/cadastro.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json(); // pega o JSON do PHP
+                console.log("Resposta do servidor:", data);
+
+                if (data.success) {
+                    // Mostra o balão
+                    mensagem.textContent = data.message;
+                    mensagem.style.display = 'block';
+
+                    // Esconde depois de 2 segundos e redireciona
+                    setTimeout(() => {
+                        mensagem.style.display = 'none';
+                        window.location.href = 'login.html';
+                    }, 2000);
+                } else {
+                    alert('Erro: ' + (data.erro || 'Algo deu errado'));
+                }
+            } catch (error) {
+                console.error("Erro na requisição:", error);
+                alert('Erro na requisição');
+            }
         });
+    </script>
 
-        console.log("Resposta do servidor:", await response.text()); // 👈 Mostra a resposta crua
-    } catch (error) {
-        console.error("Erro na requisição:", error);
-    }
-});
     </script>
 </body>
 

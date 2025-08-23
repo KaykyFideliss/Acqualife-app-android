@@ -24,7 +24,11 @@
 
 </head>
 
-<body >
+<body>
+
+
+
+
   <!-- Raiz do app Framework7 -->
   <div id="app">
     <!-- Visualização principal do Framework7 -->
@@ -33,38 +37,30 @@
       <div data-name="home" class="page color-theme-blue">
         <div data-name="login" class="page color-theme-blue" no-toolbar>
           <div class="form-container">
-            <form action="" method="post" class="form">
+
+
+            <form id="loginForm" method="post" class="form">
               <img src="img/logo-acqualife.png" alt="Acqualife" />
               <h4 class="under-tittle">Bem-vindo de volta!</h4>
               <h1 class="h1-titulo">LOGIN</h1>
 
               <div class="input-container">
                 <i class="fas fa-envelope input-icon"></i>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder=" "
-                  required
-                />
+                <input type="email" name="email" id="email" placeholder=" " required />
                 <label for="email">Email</label>
               </div>
 
               <div class="input-container">
                 <i class="fas fa-lock input-icon"></i>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder=" "
-                  required
-                />
-                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" minlength="8" placeholder=" " required>
+                <label for="password">Digite a sua senha </label>
                 <i class="fas fa-eye password-toggle" id="togglePassword"></i>
               </div>
               <a href="login.html" class="esqueceu-senha">
-                Esqueceu a senha ?</a
-              >
+                Esqueceu a senha ?</a>
+
+              <div id="loginMessage" class="login-message"></div>
+
               <button type="submit" class="btn btn-primary">Entrar</button>
               <p class="text-center">
                 Não tem uma conta?
@@ -101,5 +97,56 @@
         app.views.main.router.navigate(link);
       });
     </script>
-  </body>
+    <script>
+      $(document).ready(function () {
+        $("#loginForm").on("submit", function (e) {
+          e.preventDefault(); // evita que o form recarregue a página
+
+          var email = $("#email").val().trim();
+          var password = $("#password").val().trim();
+
+          $.ajax({
+            url: "login.php",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ email: email, password: password }),
+            success: function (response) {
+              var res = JSON.parse(response);
+              if (res.success) {
+                app.notification.create({
+                  title: 'Sucesso',
+                  text: res.message,
+                  closeOnClick: true,
+                }).open();
+                // Redireciona após 1.5s
+                setTimeout(function () {
+                  window.location.href = "home.html";
+                }, 1500);
+              } else {
+                var messageDiv = $("#loginMessage");
+                messageDiv.css("color", res.success ? "green" : "red").text(res.message);
+                if (res.success) {
+                  setTimeout(function () {
+                    window.location.href = "home.html";
+                  }, 1500);
+                }
+
+              }
+            },
+            error: function () {
+              app.notification.create({
+                title: 'Erro',
+                text: 'Não foi possível conectar ao servidor',
+                closeOnClick: true,
+                color: 'red'
+              }).open();
+            }
+          });
+
+        });
+      });
+    </script>
+
+</body>
+
 </html>

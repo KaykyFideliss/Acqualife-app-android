@@ -19,6 +19,13 @@
 
 
 }
+
+.login-message {
+  text-align: center;
+  margin: 10px 0;
+  color: rgb(255, 0, 0); /* muda para verde em caso de sucesso */
+}
+
 /* ------------------------------SCROLLBAR------------------------------ */
 /* Estilo da barra de rolagem para WebKit browsers */
 /* Esconde a barra de scroll no Webkit (Chrome, Safari) */
@@ -29,7 +36,18 @@
 /* ------------------------------ GLOBAL ------------------------------ */
 body {
   font-family: Poppins;
- 
+
+}
+
+/* FRAMEWORK7 */
+/* Para a view inteira */
+.view.view-main {
+    background-color: var(--branco); /* branco */
+}
+
+/* Para cada página */
+.page {
+    background-color: var(--branco); /* branco */
 }
 
 
@@ -99,6 +117,22 @@ body {
 
 /* ------------------------------ LOGIN ------------------------------ */
 
+#mensagem {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: rgb(255, 0, 0);
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
 .h1-titulo {
   font-size: 40px;
   padding-bottom: 10px;
@@ -117,6 +151,7 @@ body {
 }
 
 .form {
+
   background-color: var(--branco);
   display: flex;
   flex-direction: column;
@@ -771,5 +806,19 @@ section.section-team {
     text-decoration: none;
     list-style-type: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
