@@ -67,6 +67,7 @@
                 <a href="cadastro.html" class="external">Cadastre-se</a>
               </p>
             </form>
+            <div id="mensagem"></div>
           </div>
         </div>
       </div>
@@ -97,55 +98,52 @@
         app.views.main.router.navigate(link);
       });
     </script>
-    <script>
-      $(document).ready(function () {
-        $("#loginForm").on("submit", function (e) {
-          e.preventDefault(); // evita que o form recarregue a página
+    
+<script>
+    const form = document.getElementById('loginForm');
+    const mensagem = document.getElementById('mensagem');
 
-          var email = $("#email").val().trim();
-          var password = $("#password").val().trim();
+    function mostrarMensagem(texto, sucesso = true) {
+        mensagem.textContent = texto;
+        mensagem.style.display = 'block';
+        mensagem.style.whiteSpace = 'nowrap';
+        mensagem.style.background = sucesso ? '#4CAF50' : '00b7ff'; // verde ou vermelho
 
-          $.ajax({
-            url: "login.php",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({ email: email, password: password }),
-            success: function (response) {
-              var res = JSON.parse(response);
-              if (res.success) {
-                app.notification.create({
-                  title: 'Sucesso',
-                  text: res.message,
-                  closeOnClick: true,
-                }).open();
-                // Redireciona após 1.5s
-                setTimeout(function () {
-                  window.location.href = "home.html";
-                }, 1500);
-              } else {
-                var messageDiv = $("#loginMessage");
-                messageDiv.css("color", res.success ? "green" : "red").text(res.message);
-                if (res.success) {
-                  setTimeout(function () {
-                    window.location.href = "home.html";
-                  }, 1500);
-                }
+        setTimeout(() => {
+            mensagem.style.display = 'none';
+            if (sucesso) window.location.href = 'user.html';
+        }, 2000);
+    }
 
-              }
-            },
-            error: function () {
-              app.notification.create({
-                title: 'Erro',
-                text: 'Não foi possível conectar ao servidor',
-                closeOnClick: true,
-                color: 'red'
-              }).open();
-            }
-          });
+   form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
+    const formData = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    };
+
+    try {
+        const response = await fetch("login.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
         });
-      });
-    </script>
+
+        const data = await response.json();
+
+        if (data.success) {
+            mostrarMensagem(data.message, true);
+        } else {
+            mostrarMensagem(data.message || 'Email ou senha inválidos', false);
+        }
+    } catch (error) {
+        mostrarMensagem('Erro na requisição', false);
+        console.error("Erro:", error);
+    }
+});
+
+</script>
 
 </body>
 

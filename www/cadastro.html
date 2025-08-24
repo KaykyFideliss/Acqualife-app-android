@@ -59,7 +59,7 @@
 
                 <!-- TELA DO MEIO / SCROLAVEL  -->
                 <div class="form-container">
-                    <form action="www/cadastro.php" method="POST" class="form" id="registerForm">
+                    <form  method="POST" class="form" id="registerForm">
 
                         <img src="img/logo-acqualife.png" alt="acqualife" srcset="">
                         <h4 class="under-tittle">Que bom ter você por aqui!</h4>
@@ -125,54 +125,53 @@
             root: '#app',
         });
     </script>
-    <script src="js/auth.js"></script> <!-- Ou script inline abaixo -->
-    <script>
-        const form = document.getElementById('registerForm');
-        const mensagem = document.getElementById('mensagem');
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        <script>
+            const form = document.getElementById('registerForm');
+            const mensagem = document.getElementById('mensagem');
 
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                password: document.getElementById('password').value
-            };
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-            console.log("Dados que serão enviados:", formData);
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    password: document.getElementById('password').value
+                };
 
-            try {
-                const response = await fetch("http://192.168.1.2/mostra2025/Acqualife-app-android/www/cadastro.php", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
-                });
+                console.log("Dados que serão enviados:", formData);
 
-                const data = await response.json(); // pega o JSON do PHP
-                console.log("Resposta do servidor:", data);
+                try {
+                    const response = await fetch("cadastro.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData)
+                    });
 
-                if (data.success) {
-                    // Mostra o balão
-                    mensagem.textContent = data.message;
-                    mensagem.style.display = 'block';
+                    const data = await response.json(); // pega o JSON do PHP
+                    console.log("Resposta do servidor:", data);
 
-                    // Esconde depois de 2 segundos e redireciona
-                    setTimeout(() => {
-                        mensagem.style.display = 'none';
-                        window.location.href = 'login.html';
-                    }, 2000);
-                } else {
-                    alert('Erro: ' + (data.erro || 'Algo deu errado'));
-                }
-            } catch (error) {
-                console.error("Erro na requisição:", error);
-                alert('Erro na requisição');
-            }
-        });
-    </script>
+                    if (data.success) {
+                        // Mostra o balão
+                        mensagem.textContent = data.message;
+                        mensagem.style.display = 'block';
 
-    </script>
+                        // Esconde depois de 2 segundos e redireciona
+                        setTimeout(() => {
+                            mensagem.style.display = 'none';
+                            window.location.href = 'login.html';
+                        }, 2000);
+                    } else {
+                        alert('Erro: ' + (data.message || 'Algo deu errado'));
+                    }
+                } catch (error) {
+                    console.error("Erro na requisição:", error);
+                    alert('Erro na requisição');
+                }   
+            });
+        </script>
+
 </body>
 
 </html>
