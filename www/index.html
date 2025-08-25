@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Color theme for statusbar (Android only) -->
+  <meta name="theme-color" content="#2196f3" />
+  <!-- Your app title -->
+  <title>Acqualife</title>
+  <!-- Path to Framework7 Library Bundle CSS -->
+  <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
+  <!-- CSS PERSONALIZADO PARA MENU-->
+  <link rel="stylesheet" href="css/index.css" />
+  <!--Ícones Material Design-->
+  <link rel="stylesheet" href="css/materialdesignicons.min.css" />
+  <!--fontawsome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+
+</head>
+
+<body>
+
+
+
+
+  <!-- Raiz do app Framework7 -->
+  <div id="app">
+    <!-- Visualização principal do Framework7 -->
+    <div class="view view-main">
+      <!-- Página principal com nome "home" -->
+      <div data-name="home" class="page color-theme-blue">
+        <div data-name="login" class="page color-theme-blue" no-toolbar>
+          <div class="form-container">
+
+
+            <form id="loginForm" method="post" class="form">
+              <img src="img/logo-acqualife.png" alt="Acqualife" />
+              <h4 class="under-tittle">Bem-vindo de volta!</h4>
+              <h1 class="h1-titulo">LOGIN</h1>
+
+        
+             
+
+              <button type="submit" class="btn btn-primary">Entrar</button>
+              <p class="text-center">
+                Não tem uma conta?
+                <a href="cadastro.html" class="external">Cadastre-se</a>
+              </p>
+            </form>
+            <div id="mensagem"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="lib/framework7-bundle.min.js"></script>
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+      // Inicialização do Framework7
+      var app = new Framework7({
+        root: "#app",
+        routes: [
+          {
+            path: "/cadastro/",
+            url: "cadastro.html",
+          },
+        ],
+      });
+
+      // Adiciona classe external para links
+      $(document).on("click", "a.external", function (e) {
+        e.preventDefault();
+        var link = $(this).attr("href");
+        app.views.main.router.navigate(link);
+      });
+    </script>
+    
+<script>
+    const form = document.getElementById('loginForm');
+    const mensagem = document.getElementById('mensagem');
+
+    function mostrarMensagem(texto, sucesso = true) {
+        mensagem.textContent = texto;
+        mensagem.style.display = 'block';
+        mensagem.style.whiteSpace = 'nowrap';
+        mensagem.style.background = sucesso ? '#00b7ff' : '#00b7ff'; // verde ou vermelho
+
+        setTimeout(() => {
+            mensagem.style.display = 'none';
+            if (sucesso) window.location.href = 'user.html';
+        }, 2000);
+    }
+
+   form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+    };
+
+    try {
+        const response = await fetch("login.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            mostrarMensagem(data.message, true);
+        } else {
+            mostrarMensagem(data.message || 'Email ou senha inválidos', false);
+        }
+    } catch (error) {
+        mostrarMensagem('Erro na requisição', false);
+        console.error("Erro:", error);
+    }
+});
+
+</script>
+
+</body>
+
+</html>
