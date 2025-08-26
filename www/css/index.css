@@ -1,0 +1,870 @@
+/* ------------------------------ FONTES ------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/*Confortaa*/
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap");
+/* space grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/* ------------------------------ VARIÁVEIS ------------------------------ */
+:root {
+  --branco: #fff;
+  --cinza: #999;
+  --gelo: #f1f1f1;
+  --azul: #00b7ff;
+  --preto: #000000;
+  --backgoundApp:#fafafa;
+
+  /* ----FONTES----- */
+  --font-space: 'space grotesk', sans-serif;
+
+
+}
+
+
+/* ------------------------------SCROLLBAR------------------------------ */
+/* Estilo da barra de rolagem para WebKit browsers */
+/* Esconde a barra de scroll no Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ------------------------------ GLOBAL ------------------------------ */
+body {
+  font-family: Poppins;
+
+}
+
+/* FRAMEWORK7 */
+/* Para a view inteira */
+.view.view-main {
+    background-color: var(--branco); /* branco */
+}
+
+/* Para cada página */
+.page {
+    background-color: var(--branco); /* branco */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ------------------------------ TOOLBAR ------------------------------ */
+.toolbar {
+  height: 80px;
+  margin-bottom: 25px; 
+}
+
+.tab-link {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+.toolbar-inner .link {
+  color: var(--azul);
+  flex: 1;
+  height: 80px;
+  line-height: 25px;
+  font-weight: bold;
+  background-color: var(--branco);
+  border-top: 1px solid var(--gelo);
+}
+
+.toolbar-inner .link:not(.active) {
+  color: var(--preto);
+  font-weight: normal;
+}
+
+.toolbar-inner > .link i {
+  font-size: 28px;
+}
+
+/* ------------------------------ NAVBAR SUPERIOR ------------------------------ */
+.top-nav {
+  width: 100%;
+  background-color: transparent !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tittle-logo {
+  
+  font-weight: 600;
+  margin-left: 5%;
+}
+
+.tittle-logo span {
+  color: var(--azul);
+}
+
+
+
+.icon-style{
+  color: var(--azul);
+  padding: 20px 20px;
+  font-size: 20px;
+}
+
+/* ------------------------------ LOGIN ------------------------------ */
+/* CADASTRO MENSAGEM  */
+#mensagem {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--azul);
+    color: var(--branco)  ;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-family: poppins;
+    white-space: nowrap; 
+}
+
+
+
+
+/* Container da notificação */
+.notification-content {
+  background-color: var(--azul); /* Verde para sucesso */
+  color: white !important; /* Texto branco */
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed; /* Fixa na tela */
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Distância da direita */
+  z-index: 9999; /* Para ficar sobre outros elementos */
+  min-width: 250px;
+  max-width: 400px;
+  font-family: poppins;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideIn 0.5s ease-out;
+    font-weight: bold;
+    
+}
+
+/* Texto da notificação */
+.notification-text {
+ color: var(--branco) !important;
+  margin: 0;
+font-weight: bold !important;
+}
+
+/* Animação de entrada */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.h1-titulo {
+  font-size: 40px;
+  padding-bottom: 10px;
+  font-family: "poppins";
+  font-weight: 500; /* ou 300, 400, 700 */
+  color: var(--azul);
+  margin-top: -12px;
+}
+
+.under-tittle {
+  font-size: 20px;
+  font-family: "poppins";
+  font-weight: 300; /* ou 300, 400, 700 */
+  color: var(--cinza);
+  margin-top: -50px;
+}
+
+.form {
+
+  background-color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form img {
+  width: 250px;
+  height: 250px;
+}
+
+.input-container {
+  position: relative;
+  width: 80%;
+  margin-bottom: 25px;
+}
+
+.input-container label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--cinza);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: var(--branco);
+  padding: 0 5px;
+}
+
+.input-container input {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid var(--gelo);
+  padding-left: 45px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 40px;
+  font-size: 12px;
+  color: var(--azul);
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--azul);
+}
+
+/* Ícone do olho */
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+}
+
+.password-toggle:hover {
+  color: var(--azul);
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.text-center a {
+  color: var(--azul);
+  text-decoration: none;
+}
+
+.esqueceu-senha {
+  color: var(--azul);
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: -20px;
+  padding-bottom: 10px;
+  text-align: right;
+  padding-right: 10px;
+  width: 80%;
+}
+
+button.btn-primary {
+  width: 80%;
+  height: 50px;
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  border-radius: 90px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: poppins, sans-serif;
+  transition: scale 0.3s ease;
+  padding: 5px;
+}
+
+button.btn-primary:hover {
+  background-color: rgb(71, 194, 255);
+  transform: scale(1.05);
+}
+
+/* ------------------------------ HOME  ------------------------------ */
+/* Barra inferior  */
+/* Estilo Apple-like */
+.apple-toolbar {
+  background: transparent !important; /* remove fundo padrão */
+  backdrop-filter: none !important; /*permite que você aplique efeitos gráficos, como desfoque ou mudança de cores*/
+  border: none !important;
+  box-shadow: none !important;
+  padding-bottom: 10px;
+}
+
+/* Remove pseudo-elementos que podem criar fundo ou sombra */
+.apple-toolbar::before,
+.apple-toolbar::after,
+.toolbar::before,
+.toolbar::after {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Remove o fundo branco padrão da toolbar */
+.toolbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Container da barra (círculo cinza) */
+.apple-toolbar .toolbar-inner {
+  left: 50%;
+  top: 14px;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #111; /* cor da barra arredondada */
+  border-radius: 30px;
+  gap: 20px;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Links da barra */
+.apple-toolbar .tab-link {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.apple-toolbar .tab-link span {
+  font-size: 14px;
+  display: none; /* só aparece no ativo */
+}
+
+.apple-toolbar .tab-link.active {
+  background: var(--azul);
+  color: #fff;
+  font-family: poppins, sans-serif;
+  
+}
+
+.apple-toolbar .tab-link.active span {
+  display: inline;
+}
+
+.apple-toolbar i {
+  font-size: 20px;
+}
+
+/* Classe auxiliar */
+.tap-limk {
+  background-color: transparent;
+}
+
+/* Remove fundo do conteúdo da página se estiver branco */
+.page-content {
+  background-color: var(--branco) !important; /*PAGE CONTENT = FUNDO DO APP */
+}
+
+
+/* ------------------USER-------------------------------- */
+
+
+.titulo-fixo{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--azul);
+  text-align: center;
+  margin-top: 48px;
+  
+  
+}
+
+.subtitulo-fixo{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--azul);
+  text-align: center;
+  margin-bottom: -8px;
+  
+  
+}
+
+.container-titulo {
+  margin-top: 40px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.container-idf {
+  
+  background-color: var(--azul);
+  display: flex;
+  align-items: center;
+  height: 170px;
+  margin-top: 20px;
+  box-shadow: #00b7ffa4 0px 10px 20px -10px;
+  justify-content: center;
+}
+
+.img-avatar {
+  cursor: pointer;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-right: 1px;
+  margin-right: 2dvh;
+  
+  
+}
+
+.nome-usuario{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--branco);
+  margin-bottom: -1px;
+}
+
+.email-usuario {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+  color: var(--branco);
+  font-weight: 300;
+  margin-top: -2px;
+}
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+   height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--branco);
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  overflow: hidden; /* evita que nada vaze */
+  border: 2px solid var(--branco);
+}
+
+.h3-modal-avatar{
+  font-size: 24px;
+  padding-bottom: 10px;
+  color: var(--azul);
+  font-family: var(--font-space);
+}
+
+
+/* grid adaptável */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 10px;
+}
+
+/* avatar dentro do modal */
+.foto {
+  width: 70px;
+
+  border-radius: 50%; 
+  object-fit: cover; 
+  object-position: center;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solif var(--branco);
+
+}
+
+.foto:hover {
+  border-color: var(--azul);
+  transform: scale(1.1);
+
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--azul);
+}
+
+.close:hover{
+  transform: scale(1.2);
+}
+
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;       /* ocupa quase toda a tela no celular */
+    padding: 15px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+
+  .foto {
+    max-width: 80px;
+  }
+}
+
+
+/* ------------------SOBRE--------------------------------- */
+/* Estilos para a imagem responsiva */
+.img-container {
+  width: 90%; /* Ocupa 100% da largura do container pai */
+  height: 27dvh;
+  align-items: center;
+  margin: 0 auto; /* Centraliza o container */
+  margin-top: 20px;
+  border-radius: 20px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse */
+  display: flex;
+  justify-content: center; /* Centraliza a imagem horizontalmente */
+  position: relative;
+  
+}
+
+
+.responsive-img {
+  width: 100%; /* Você pode ajustar este valor (ex: 80%, 90%, etc) */
+  max-width: 1200px; /* Opcional: define uma largura máxima */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* ou 'contain' dependendo do efeito desejado */
+
+  
+  
+  /* Adicione media queries para ajustes específicos em diferentes telas */
+  @media (max-width: 768px) {
+    width: 95%; /* Ajuste para mobile */
+    border-radius: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 100%; /* Ocupa toda a largura em telas muito pequenas */
+    
+  }
+}
+
+.NossaHist{
+
+   margin-inline: 20px;
+   margin-top: 10px;
+}
+
+.h1-NossaHist, .h1-ComoFunciona{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--azul);
+  text-align: center;
+  margin-top: 20px;
+  
+  
+}
+
+.p-NossaHist  {
+  font-size: 16px;
+  color: var(--preto);
+  text-align: justify;
+  margin: 20px;
+  line-height: 1.6;
+  font-family: "poppins", sans-serif;
+}
+
+.ComoFunciona{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  color: var(--branco);
+  text-align: center;
+  border-radius: 30px;
+  background-color: var(--azul);  
+  padding-inline: 20px;
+    padding-bottom: 45px;
+    margin-bottom: 40px;
+  
+}
+
+.p-ComoFunciona {
+  font-size: 16px;
+  color: var(--branco);
+  text-align: justify;
+  margin: 20px;
+
+  line-height: 1.6;
+  font-family: "poppins", sans-serif;
+}
+
+.h1-ComoFunciona{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--branco);
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  
+  
+}
+
+
+/* FRASE IMPACTANTE */
+/* CSS Atualizado */
+.container-frase-impactante {
+  display: flex;
+  flex-direction: row; /* Lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  padding: 20px;
+  gap: 20px; /* Espaço entre logo e texto */
+  flex-wrap: wrap; /* Permite quebrar linha em telas muito pequenas */
+ 
+}
+
+
+
+.img-abraço-planeta{
+height: 50%;
+width: 50%;
+
+}
+
+.text-impact {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1; /* Ocupa o espaço restante */
+  min-width: 200px; /* Largura mínima para o texto */
+}
+
+.p-impact {
+  color: var(--azul);
+  font-size: 1.5rem; /* Tamanho adequado para mobile */
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+.highlight {
+  color: #328135;
+}
+
+/* Media Query para telas maiores */
+@media (min-width: 600px) {
+  .img-abraço-planeta {
+    max-width: 150px; /* Aumenta um pouco em telas maiores */
+  }
+  
+  .txt-planeta {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 400px) {
+  .container-frase-impactante {
+    flex-direction: column; /* Empilha em telas muito pequenas */
+    text-align: center;
+  }
+  
+  .img-abraço-planeta {
+    margin-bottom: 15px;
+  }
+}
+
+
+
+/* NOSSO TIME --------------------------------*/
+
+section.section-team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 20px;
+  padding-bottom: 100px;
+  justify-items: center; /* Centraliza os cards */
+}
+
+.card-team {
+  position: relative;
+  width: 100%;
+  max-width: 250px; /* limite máximo */
+  aspect-ratio: 5/7; /* mantém proporção */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-team:hover {
+  transform: scale(1.05);
+}
+
+.card-team img.img-team {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: grayscale(100%); */
+  transition: filter 0.3s ease;
+}
+
+.card-team:hover img.img-team {
+  filter: grayscale(0%);
+}
+
+.info-team {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background-color: white;
+  color: var(--azul);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.card-team:hover .info-team {
+  background-color: var(--azul);
+  color: white;
+}
+
+.info-team .h3-time {
+  margin-bottom: 5px;
+  font-size: 1rem;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.info-team p {
+  margin-bottom: 10px;
+  font-size: 10px;
+  align-items: center;
+  text-align: center;
+  
+  justify-content: center;
+}
+
+.icons-team {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-alinhamento{
+  padding-top: -5px /* metodo que consegui alinhar o icon com o Desenvolvedor do card  */
+}
+
+.icons-team a {
+  color: var(--azul);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.card-team:hover .icons-team a {
+  color: var(--branco);
+}
+
+.icone-team:hover {
+  color: var(--cinza);
+}
+
+
+/* Responsivo: 2 colunas no mobile */
+@media (max-width: 768px) {
+  section.section-team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .card-team {
+    max-width: 180px; /* diminui para caber */
+  }
+}
+
+
+
+.copy{
+    font-size:20px;
+    color:#fff;
+    text-align: center;
+    justify-content: center;
+}
+
+.li-footer{
+
+    text-decoration: none;
+    list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

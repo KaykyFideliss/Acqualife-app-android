@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- Color theme for statusbar (Android only) -->
+  <meta name="theme-color" content="#2196f3" />
+  <!-- Your app title -->
+  <title>Acqualife</title>
+  <!-- Path to Framework7 Library Bundle CSS -->
+  <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
+  <!-- CSS PERSONALIZADO PARA MENU-->
+  <link rel="stylesheet" href="css/index.css" />
+  <!--Ícones Material Design-->
+  <link rel="stylesheet" href="css/materialdesignicons.min.css" />
+  <!--fontawsome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body >
+  <!-- Raiz do app Framework7 -->
+  <div id="app">
+    <!-- Visualização principal do Framework7 -->
+    <div class="view view-main">
+      <!-- Página principal com nome "home" -->
+      <div data-name="home" class="page color-theme-blue">
+        <!-- Barra de abas (tab bar) fixa na parte inferior, estilo Apple -->
+        <div class="toolbar toolbar-bottom apple-toolbar">
+          <div class="toolbar-inner">
+            <!-- Botão da aba Home -->
+            <a href="/home/" class="tab-link" data-route="home">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+
+            <a href="/sobre/" class="tab-link " data-route="sobre" onclick="irParaHome()">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Sobre</span>
+            </a>
+
+            <a href="/user/" class="tab-link active " data-route="user">
+              <i class="fa-solid fa-user"></i>
+              <span>Perfil</span>
+            </a>
+          </div>
+        </div>
+        <!-- ----------------------- NAVBA----------------------- -->
+        <div class="top-nav "> <!--style="height: 45px !important;"-->
+          
+        </div>
+
+        <!-- Conteúdo principal da página, área scrollável -->
+        <div class="page-content scrollable " ">
+        <div class=" titulo-fixo">
+          ACQUALIFE
+        </div>
+        
+            
+          <div class="container-idf">
+  <!-- Avatar clicável -->
+  <img src="img/avatares/avatar-1.png" alt="" class="img-avatar" id="avatar" onclick="abrirModal()"/>
+  
+  <div class="texto-identificacao">
+    <p class="nome-usuario">Olá, Visitante!</p>
+    <p class="email-usuario">Faça seu login ou cadastre-se</p>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="avatarModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></span>
+    <h3 class="h3-modal-avatar">Escolha seu avatar</h3>
+    <div class="grid">
+      <img src="img/avatares/avatar-1.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-2.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-3.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-4.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-5.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-6.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-7.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-8.png" class="foto" onclick="trocarAvatar(this)">
+  </div>
+</div>
+
+        <!-- fim da página "home" -->
+      </div>
+    </div>
+
+    
+    <!-- fim da raiz do app -->
+
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
+
+    <script src="js/avatar.js"></script>
+
+    
+    <script src="js/auth.js"></script>
+    <!-- Ou script inline abaixo -->
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            password: document.getElementById("password").value,
+          };
+
+          console.log("Dados que serão enviados:", formData); // 👈 Verifique no console
+
+          try {
+            const response = await fetch("http://SEU_IP:5000/api/register", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formData),
+            });
+
+            console.log("Resposta do servidor:", await response.text()); // 👈 Mostra a resposta crua
+          } catch (error) {
+            console.error("Erro na requisição:", error);
+          }
+        });
+    </script>
+  </body>
+</html>
