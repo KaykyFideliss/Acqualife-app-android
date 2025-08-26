@@ -61,7 +61,7 @@
                 <div class="form-container">
                     <form  method="POST" class="form" id="registerForm">
 
-                        <img src="img/logo-acqualife.png" alt="acqualife" srcset="">
+                        <img src="img/logo-acqualife.png" alt="acqualife" id="link-img-cadastro">
                         <h4 class="under-tittle">Que bom ter você por aqui!</h4>
                         <h1 class="h1-titulo">CADASTRE-SE</h1>
 
@@ -172,6 +172,16 @@
             });
         </script>
 
+<script>
+
+ const linkToPageCadastro = document.getElementById('link-img-cadastro');
+
+        linkToPageCadastro .addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+
+</script>
+       
 </body>
 
 </html>

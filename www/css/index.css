@@ -10,7 +10,7 @@
   --branco: #fff;
   --cinza: #999;
   --gelo: #f1f1f1;
-  --azul: #00b7ff;
+  --azul: #0073f2;
   --preto: #000000;
   --backgoundApp:#fafafa;
 
@@ -110,6 +110,31 @@ body {
   font-size: 20px;
 }
 
+/*------------------------------ BEM VINDO ---------------------------- */
+
+.container-bemvindo {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container-bemvindo img{
+  width: 250px;
+  height: 250px;
+  z-index: 9999999;
+}
+
+
+
+
+
+
 /* ------------------------------ LOGIN ------------------------------ */
 /* CADASTRO MENSAGEM  */
 #mensagem {
@@ -185,6 +210,16 @@ font-weight: bold !important;
   margin-top: -12px;
 }
 
+.h1-titulo-index{
+  color: var(--azul);
+  font-size: 40px;
+  padding-bottom: 10px;
+  font-family:var(--font-space);
+  font-weight: 500; /* ou 300, 400, 700 */
+  color: var(--azul);
+  margin-top: -12px;
+}
+
 .under-tittle {
   font-size: 20px;
   font-family: "poppins";
@@ -205,6 +240,7 @@ font-weight: bold !important;
   margin: 0 auto;
   padding: 20px;
 }
+
 
 .form img {
   width: 250px;

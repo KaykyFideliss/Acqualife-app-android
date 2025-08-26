@@ -36,25 +36,23 @@
       <!-- Página principal com nome "home" -->
       <div data-name="home" class="page color-theme-blue">
         <div data-name="login" class="page color-theme-blue" no-toolbar>
-          <div class="form-container">
+         
+         
+
+<div class="container-bemvindo">
+  <img src="img/logo-acqualife.png" alt="Accqualife">
+  <h4 class="under-tittle">Seja muito bem-vindo ao</h4>
+  <h1 class="h1-titulo-index">ACQUALIFE</h1>
+  <br><br>
+  <button id ="btn-login"class="btn btn-primary">Fazer Login</button>
+  <br>
+  <!-- <div class="linha"></div> -->
+  
+  <button id ="btn-cadastro"class="btn btn-primary">Fazer Cadastro</button>
+</div>
 
 
-            <form id="loginForm" method="post" class="form">
-              <img src="img/logo-acqualife.png" alt="Acqualife" />
-              <h4 class="under-tittle">Bem-vindo de volta!</h4>
-              <h1 class="h1-titulo">LOGIN</h1>
-
-        
-             
-
-              <button type="submit" class="btn btn-primary">Entrar</button>
-              <p class="text-center">
-                Não tem uma conta?
-                <a href="cadastro.html" class="external">Cadastre-se</a>
-              </p>
-            </form>
-            <div id="mensagem"></div>
-          </div>
+           
         </div>
       </div>
     </div>
@@ -64,6 +62,18 @@
     <script src="lib/jquery-3.7.0.min.js"></script>
     <script src="js/routes.js"></script>
     <script src="js/script.js"></script>
+
+    <!-- Funcionalidade botão fazer login e fazer cadastrro  -->
+     <script>
+      const botaoLogin = document.getElementById('btn-login');
+
+    botaoLogin.addEventListener('click', function() {
+        window.location.href = 'login.html'; // Redireciona para user.html
+    });
+
+    
+     </script>
+
 
     <script>
       // Inicialização do Framework7
