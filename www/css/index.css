@@ -441,8 +441,9 @@ button.btn-primary:hover {
   align-items: center;
   height: 170px;
   margin-top: 20px;
-  box-shadow: #00b7ffa4 0px 10px 20px -10px;
+  /* box-shadow: #00b7ffa4 0px 10px 20px -10px; */
   justify-content: center;
+  
 }
 
 .img-avatar {
@@ -482,6 +483,7 @@ button.btn-primary:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+ 
 }
 
 .modal-content {
@@ -557,6 +559,134 @@ button.btn-primary:hover {
     max-width: 80px;
   }
 }
+
+/* ------------------TANQUE--------------------------------- */
+.status-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.tanque {
+  text-align: center;
+}
+
+.status-circle {
+  position: relative;
+  border: 3px solid var(--azul);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: var(--azul);
+  font-size: 18px;
+  margin: 0 auto 10px;
+}
+
+.status-circle span {
+  position: absolute;
+  z-index: 2;
+}
+
+
+/* Textos abaixo */
+.litragem-total,
+.litragem-atual {
+  font-size: 14px;
+  margin: 2px 0;
+  color: var(--azul);
+}
+
+
+/* -------------------NUMERO PH ------------------------ */
+
+.section-ph{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: var(--azul);
+  border-radius: 20px;
+  margin-inline:10px;
+}
+
+.h1-user {
+   font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--branco);
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px 0px 0px 0px;
+  
+}
+
+.h1-user-tanques {
+   font-family: "Space Grotesk", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--azul);
+  text-align: center;
+  margin-top: 20px;
+  padding: 0px 0px 0px 0px;
+  
+}
+
+.card-ph{
+      
+      color: var(--branco);
+      text-align: center;
+      padding: 20px;
+      width: 100%;      
+    }
+
+    .ph-value {
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    .scale {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .numbers {
+
+      padding-top: 5px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9em;
+    }
+
+    .line {
+      height: 2px;
+      background: var(--branco);
+      margin: 5px 0;
+      position: relative;
+    }
+
+    .marker {
+      position: absolute;
+      top: -9px;
+      font-size: 1.2em;
+      transition: left 0.5s ease;
+       transform: translateX(-50%); /* <<< centraliza no número */
+    }
+
+.div-ph-descriptions{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+
+
 
 
 /* ------------------SOBRE--------------------------------- */

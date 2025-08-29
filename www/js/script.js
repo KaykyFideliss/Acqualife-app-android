@@ -27,9 +27,6 @@ function moveCircleTo(el, circle) {
   circle.style.transform = `translate(${offset}px, -50%)`;
 }
 
-
-
-
 // // TROCA DE FOTO DOS AVATARES ----------USER --------------------
 
 // function abrirModal() {

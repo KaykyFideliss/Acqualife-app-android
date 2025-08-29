@@ -20,9 +20,10 @@
   <!--fontawsome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+
 </head>
 
-<body >
+<body>
   <!-- Raiz do app Framework7 -->
   <div id="app">
     <!-- Visualização principal do Framework7 -->
@@ -51,7 +52,7 @@
         </div>
         <!-- ----------------------- NAVBA----------------------- -->
         <div class="top-nav "> <!--style="height: 45px !important;"-->
-          
+
         </div>
 
         <!-- Conteúdo principal da página, área scrollável -->
@@ -59,82 +60,129 @@
         <div class=" titulo-fixo">
           ACQUALIFE
         </div>
-        
-            
-          <div class="container-idf">
-  <!-- Avatar clicável -->
-  <img src="img/avatares/avatar-1.png" alt="" class="img-avatar" id="avatar" onclick="abrirModal()"/>
-  
-  <div class="texto-identificacao">
-    <p class="nome-usuario">Olá, Visitante!</p>
-    <p class="email-usuario">Faça seu login ou cadastre-se</p>
-  </div>
+        <div class="container-idf">
+          <!-- Avatar clicável -->
+          <img src="img/avatares/avatar-1.png" alt="" class="img-avatar" id="avatar" onclick="abrirModal()" />
+
+          <div class="texto-identificacao">
+            <p class="nome-usuario">Olá, Visitante!</p>
+            <p class="email-usuario">Faça seu login ou cadastre-se</p>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="avatarModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></span>
+            <h3 class="h3-modal-avatar">Escolha seu avatar</h3>
+            <div class="grid">
+              <img src="img/avatares/avatar-1.png" class="foto" onclick="trocarAvatar(this)">
+              <img src="img/avatares/avatar-2.png" class="foto" onclick="trocarAvatar(this)">
+              <img src="img/avatares/avatar-3.png" class="foto" onclick="trocarAvatar(this)">
+              <img src="img/avatares/avatar-4.png" class="foto" onclick="trocarAvatar(this)">
+              <img src="img/avatares/avatar-5.png" class="foto" onclick="trocarAvatar(this)">
+              <img src="img/avatares/avatar-6.png" class="foto" onclick="trocarAvatar(this)">
+              <img src="img/avatares/avatar-7.png" class="foto" onclick="trocarAvatar(this)">
+              <img src="img/avatares/avatar-8.png" class="foto" onclick="trocarAvatar(this)">
+            </div>
+          </div>
 </div>
 
-<!-- Modal -->
-<div id="avatarModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></span>
-    <h3 class="h3-modal-avatar">Escolha seu avatar</h3>
-    <div class="grid">
-      <img src="img/avatares/avatar-1.png" class="foto" onclick="trocarAvatar(this)">
-      <img src="img/avatares/avatar-2.png" class="foto" onclick="trocarAvatar(this)">
-      <img src="img/avatares/avatar-3.png" class="foto" onclick="trocarAvatar(this)">
-      <img src="img/avatares/avatar-4.png" class="foto" onclick="trocarAvatar(this)">
-      <img src="img/avatares/avatar-5.png" class="foto" onclick="trocarAvatar(this)">
-      <img src="img/avatares/avatar-6.png" class="foto" onclick="trocarAvatar(this)">
-      <img src="img/avatares/avatar-7.png" class="foto" onclick="trocarAvatar(this)">
-      <img src="img/avatares/avatar-8.png" class="foto" onclick="trocarAvatar(this)">
-  </div>
-</div>
 
-        <!-- fim da página "home" -->
-      </div>
+<section>
+
+<h1 class="h1-user-tanques" >Tanques </h1>
+<div class="status-row">
+  <div class="tanque">
+    <div class="status-circle">
+      <span id="circle1">0%</span>
+      <div class="wave"></div>
     </div>
+    <p class="litragem-total" id="total1">Tanque: 0L</p>
+    <p class="litragem-atual" id="atual1">Atual: 0L</p>
+  </div>
 
-    
-    <!-- fim da raiz do app -->
+  <div class="tanque">
+    <div class="status-circle">
+      <span id="circle2">0%</span>
+      <div class="wave"></div>
+    </div>
+    <p class="litragem-total" id="total2">Tanque: 0L</p>
+    <p class="litragem-atual" id="atual2">Atual: 0L</p>
+  </div>
 
-    <!-- Path to Framework7 Library Bundle JS-->
-    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-    <!-- jQuery -->
-    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
-    <!-- Roteamento do app-->
-    <script type="text/javascript" src="js/routes.js"></script>
-    <script src="cordova.js"></script>
+  <div class="tanque">
+    <div class="status-circle">
+      <span id="circle3">0%</span>
+      <div class="wave"></div>
+    </div>
+    <p class="litragem-total" id="total3">Tanque: 0L</p>
+    <p class="litragem-atual" id="atual3">Atual: 0L</p>
+  </div>
+</div>
 
-    <script src="js/avatar.js"></script>
+</section>
 
-    
-    <script src="js/auth.js"></script>
-    <!-- Ou script inline abaixo -->
-    <script>
-      document
-        .getElementById("registerForm")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
+<section class="section-ph">
+<h1 class="h1-user" >Seu detector de PH</h1>
+ <div class="card-ph">
+    <div class="ph-value" id="phValue">7</div>
+    <div class="scale">
+  <div class="line"></div>
+  <div class="marker" id="marker">▼</div>
+  <div class="numbers">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+    <span>6</span>
+    <span>7</span>
+    <span>8</span>
+    <span>9</span>
+    <span>10</span>
+    <span>11</span>
+    <span>12</span>
+    <span>13</span>
+    <span>14</span>
+  </div>
+</div>
+<div class="div-ph-descriptions">
+    <p class="ph-description" id="phDescription">Acido</p>
+      
+    <p class="ph-description" id="phDescription">Neutro</p>
+    <p class="ph-description" id="phDescription">Alto</p>
+</div>
+  </div>
+</section>
 
-          const formData = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            password: document.getElementById("password").value,
-          };
 
-          console.log("Dados que serão enviados:", formData); // 👈 Verifique no console
 
-          try {
-            const response = await fetch("http://SEU_IP:5000/api/register", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formData),
-            });
 
-            console.log("Resposta do servidor:", await response.text()); // 👈 Mostra a resposta crua
-          } catch (error) {
-            console.error("Erro na requisição:", error);
-          }
-        });
-    </script>
-  </body>
+
+
+
+
+
+
+
+
+
+</div>
+          <!-- fim da raiz do app -->
+          <script src="js/tanque.js"></script>
+          <!-- Path to Framework7 Library Bundle JS-->
+          <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+          <!-- jQuery -->
+          <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+          <!-- Roteamento do app-->
+          <script type="text/javascript" src="js/routes.js"></script>
+          <script src="cordova.js"></script>
+
+          <script src="js/avatar.js"></script>
+
+
+          <script src="js/auth.js"></script>
+
+</body>
 </html>
