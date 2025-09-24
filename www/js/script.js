@@ -1,3 +1,5 @@
+
+// TABBAR
 document.addEventListener('DOMContentLoaded', function() {
   const togglePassword = document.getElementById('togglePassword');
   

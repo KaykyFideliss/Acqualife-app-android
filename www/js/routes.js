@@ -26,7 +26,7 @@ var app = new Framework7({
 
   routes: [
     { path: '/home/', url: 'home.html' },
-    { path: '/sobre/', url: 'sobre.html' },
+    { path: '/sobre/', url: 'Sobre.html' },
     { path: '/user/', url: 'user.html' }
   ],
 });

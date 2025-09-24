@@ -1,29 +1,30 @@
-<!DOCTYPE html>
-<html>
+  <!DOCTYPE html>
+  <html>
 
-<head>
-  <!-- Required meta tags-->
-  <meta charset="utf-8" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <!-- Color theme for statusbar (Android only) -->
-  <meta name="theme-color" content="#2196f3" />
-  <!-- Your app title -->
-  <title>Acqualife</title>
-  <!-- Path to Framework7 Library Bundle CSS -->
-  <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
-  <!-- CSS PERSONALIZADO PARA MENU-->
-  <link rel="stylesheet" href="css/index.css" />
-  <!--Ícones Material Design-->
-  <link rel="stylesheet" href="css/materialdesignicons.min.css" />
-  <!--fontawsome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3" />
+    <!-- Your app title -->
+    <title>Acqualife</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/index.css" />
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css" />
+    <!--fontawsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+    <link rel="shortcut icon" href="img/logo-acqualife.png" type="image/x-icon">
 
 </head>
 
-<body>
+<body >
   <!-- Raiz do app Framework7 -->
   <div id="app">
     <!-- Visualização principal do Framework7 -->
@@ -39,10 +40,10 @@
               <span>Home</span>
             </a>
 
-            <a href="/sobre/" class="tab-link " data-route="sobre" onclick="irParaHome()">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <span>Sobre</span>
-            </a>
+              <a href="/sobre/" class="tab-link " data-route="sobre">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Sobre</span>
+              </a>
 
             <a href="/user/" class="tab-link active " data-route="user">
               <i class="fa-solid fa-user"></i>
@@ -52,7 +53,7 @@
         </div>
         <!-- ----------------------- NAVBA----------------------- -->
         <div class="top-nav "> <!--style="height: 45px !important;"-->
-
+          
         </div>
 
         <!-- Conteúdo principal da página, área scrollável -->
@@ -60,41 +61,43 @@
         <div class=" titulo-fixo">
           ACQUALIFE
         </div>
-        <div class="container-idf">
-          <!-- Avatar clicável -->
-          <img src="img/avatares/avatar-1.png" alt="" class="img-avatar" id="avatar" onclick="abrirModal()" />
+        
+            
+             <div class="container-idf">
+    <!-- Avatar clicável -->
+     
+    <img src="img/avatares/avatar-1.png" alt="" class="img-avatar" id="avatar" onclick="abrirModal()"/>
+ 
+    <!-- Texto de identificação do usuário -->
+    <div class="texto-identificacao">
+      <p class="nome-usuario">Olá, Visitante!</p>
+      <p class="email-usuario">Faça seu login ou cadastre-se</p>
+    </div>
+  </div>
 
-          <div class="texto-identificacao">
-            <p class="nome-usuario">Olá, Visitante!</p>
-            <p class="email-usuario">Faça seu login ou cadastre-se</p>
-          </div>
-        </div>
-
-        <!-- Modal -->
-        <div id="avatarModal" class="modal">
-          <div class="modal-content">
-            <span class="close" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></span>
-            <h3 class="h3-modal-avatar">Escolha seu avatar</h3>
-            <div class="grid">
-              <img src="img/avatares/avatar-1.png" class="foto" onclick="trocarAvatar(this)">
-              <img src="img/avatares/avatar-2.png" class="foto" onclick="trocarAvatar(this)">
-              <img src="img/avatares/avatar-3.png" class="foto" onclick="trocarAvatar(this)">
-              <img src="img/avatares/avatar-4.png" class="foto" onclick="trocarAvatar(this)">
-              <img src="img/avatares/avatar-5.png" class="foto" onclick="trocarAvatar(this)">
-              <img src="img/avatares/avatar-6.png" class="foto" onclick="trocarAvatar(this)">
-              <img src="img/avatares/avatar-7.png" class="foto" onclick="trocarAvatar(this)">
-              <img src="img/avatares/avatar-8.png" class="foto" onclick="trocarAvatar(this)">
-            </div>
-          </div>
+<!-- Modal -->
+<div id="avatarModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal()"><i class="fa-solid fa-xmark"></i></span>
+    <h3 class="h3-modal-avatar">Escolha seu avatar</h3>
+    <div class="grid">
+      <img src="img/avatares/avatar-1.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-2.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-3.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-4.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-5.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-6.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-7.png" class="foto" onclick="trocarAvatar(this)">
+      <img src="img/avatares/avatar-8.png" class="foto" onclick="trocarAvatar(this)">
+  </div>
 </div>
-
-
+</div>
 <section>
 
 <h1 class="h1-user-tanques" >Tanques </h1>
 <div class="status-row">
-  <div class="tanque">
-    <div class="status-circle">
+  <div class="tanque"  onclick="abrirTanqueModal(1)">
+    <div class = "status-circle">
       <span id="circle1">0%</span>
       <div class="wave"></div>
     </div>
@@ -102,7 +105,7 @@
     <p class="litragem-atual" id="atual1">Atual: 0L</p>
   </div>
 
-  <div class="tanque">
+  <div class="tanque"  onclick="abrirTanqueModal(2)">
     <div class="status-circle">
       <span id="circle2">0%</span>
       <div class="wave"></div>
@@ -111,7 +114,7 @@
     <p class="litragem-atual" id="atual2">Atual: 0L</p>
   </div>
 
-  <div class="tanque">
+  <div class="tanque" onclick="abrirTanqueModal(3)">
     <div class="status-circle">
       <span id="circle3">0%</span>
       <div class="wave"></div>
@@ -120,6 +123,19 @@
     <p class="litragem-atual" id="atual3">Atual: 0L</p>
   </div>
 </div>
+
+<!-- Modal dos Tanques -->
+<div id="tanqueModal" class="modal-tanque">
+  <div class="modal-content">
+    <span class="close" onclick="fecharTanqueModal()"><i class="fa-solid fa-xmark"></i></span>
+    <h3 class="h3-modal-tanque">Informações do Tanque</h3>
+    <p id="modalTanqueTitulo">Tanque 1</p>
+    <p id="modalTanqueTotal">Capacidade: 0L</p>
+    <p id="modalTanqueAtual">Atual: 0L</p>
+    <p id="modalTanqueUltima">Última medição: --</p>
+  </div>
+</div>
+
 
 </section>
 
@@ -156,33 +172,59 @@
   </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="container-logout">
+ <a href="logout.php" class="button-logout">Sair da conta</a>
 </div>
-          <!-- fim da raiz do app -->
-          <script src="js/tanque.js"></script>
-          <!-- Path to Framework7 Library Bundle JS-->
-          <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
-          <!-- jQuery -->
-          <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
-          <!-- Roteamento do app-->
-          <script type="text/javascript" src="js/routes.js"></script>
-          <script src="cordova.js"></script>
+  </div>
 
-          <script src="js/avatar.js"></script>
+    
+    <!-- fim da raiz do app -->
 
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
 
-          <script src="js/auth.js"></script>
+    <script src="js/avatar.js"></script>
+    <script src="js/tanque.js"></script>
+  
 
-</body>
+    <script>
+      // Simulação dos dados (no futuro você puxa do BD via AJAX/Fetch)
+const tanquesDB = {
+  1: { total: 1000, atual: 750, ultima: "22/09/2025 14:30" },
+  2: { total: 500, atual: 200, ultima: "21/09/2025 18:10" },
+  3: { total: 2000, atual: 1900, ultima: "23/09/2025 09:00" }
+};
+
+function abrirTanqueModal(num) {
+  const modal = document.getElementById("tanqueModal");
+  const dados = tanquesDB[num];
+
+  document.getElementById("modalTanqueTitulo").innerText = "Tanque " + num;
+  document.getElementById("modalTanqueTotal").innerText = "Capacidade: " + dados.total + "L";
+  document.getElementById("modalTanqueAtual").innerText = "Atual: " + dados.atual + "L";
+  document.getElementById("modalTanqueUltima").innerText = "Última medição: " + dados.ultima;
+
+  modal.style.display = "flex";
+}
+
+function fecharTanqueModal() {
+  document.getElementById("tanqueModal").style.display = "none";
+}
+
+// Fecha modal se clicar fora
+window.onclick = function(event) {
+  const modal = document.getElementById("tanqueModal");
+  if (event.target === modal) {
+    fecharTanqueModal();
+  }
+};
+
+    </script>
+    <script src="logout.js"></script>
+  </body>
 </html>

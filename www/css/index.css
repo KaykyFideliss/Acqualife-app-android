@@ -10,7 +10,7 @@
   --branco: #fff;
   --cinza: #999;
   --gelo: #f1f1f1;
-  --azul: #00b7ff;
+  --azul: #0073f2;
   --preto: #000000;
   --backgoundApp:#fafafa;
 
@@ -110,6 +110,31 @@ body {
   font-size: 20px;
 }
 
+/*------------------------------ BEM VINDO ---------------------------- */
+
+.container-bemvindo {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container-bemvindo img{
+  width: 250px;
+  height: 250px;
+  z-index: 9999999;
+}
+
+
+
+
+
+
 /* ------------------------------ LOGIN ------------------------------ */
 /* CADASTRO MENSAGEM  */
 #mensagem {
@@ -185,6 +210,16 @@ font-weight: bold !important;
   margin-top: -12px;
 }
 
+.h1-titulo-index{
+  color: var(--azul);
+  font-size: 40px;
+  padding-bottom: 10px;
+  font-family:var(--font-space);
+  font-weight: 500; /* ou 300, 400, 700 */
+  color: var(--azul);
+  margin-top: -12px;
+}
+
 .under-tittle {
   font-size: 20px;
   font-family: "poppins";
@@ -205,6 +240,7 @@ font-weight: bold !important;
   margin: 0 auto;
   padding: 20px;
 }
+
 
 .form img {
   width: 250px;
@@ -402,17 +438,6 @@ button.btn-primary:hover {
 /* ------------------USER-------------------------------- */
 
 
-.titulo-fixo{
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--azul);
-  text-align: center;
-  margin-top: 48px;
-  
-  
-}
-
 .subtitulo-fixo{
   font-family: "Space Grotesk", sans-serif;
   font-size: 16px;
@@ -604,6 +629,49 @@ button.btn-primary:hover {
   color: var(--azul);
 }
 
+/* ----------MODAL TANQUE --------------------------- */
+
+
+.modal-tanque {
+  
+  display: none; /* só aparece quando ativo */
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  justify-content: center;    /* centraliza horizontal */
+  align-items: center;        /* centraliza vertical */
+  z-index: 1000;
+}
+
+.modal-content-tanque {
+  background: var(--branco);
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  overflow: hidden; /* evita que nada vaze */
+  border: 2px solid var(--branco);
+}
+
+.h3-modal-tanque {
+  font-size: 24px;
+  padding-bottom: 10px;
+  color: var(--azul);
+  font-family: var(--font-space);
+}
+
+/* se precisar de grid dentro do modal */
+.grid-tanque {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 10px;
+}
+
 
 /* -------------------NUMERO PH ------------------------ */
 
@@ -636,6 +704,19 @@ button.btn-primary:hover {
   padding: 0px 0px 0px 0px;
   
 }
+
+.titulo-fixo{
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--azul);
+  text-align: center;
+  margin-top: 48px;
+  
+}
+
+/* --------------------------PH -------------------- */
+
 
 .card-ph{
       
@@ -685,8 +766,34 @@ button.btn-primary:hover {
   margin-top: 5px;
 }
 
+.container-logout{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  margin-left: 20px;
+  ;
+}
 
+.button-logout{
+  width: 160px;
+  height: 50px;
+  background-color: var(--azul);
+  color: var(--branco);
+  border: none;
+  border-radius: 90px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: poppins, sans-serif;
+  transition: scale 0.3s ease;
+  padding: 5px;
+}
 
+.button-logout:hover {
+  background: #0057b2;
+  transform: scale(1.05);
+}
 
 
 /* ------------------SOBRE--------------------------------- */
